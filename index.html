@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RMP Recruitment — Care Recruitment That Develops Its People</title>
+<meta name="description" content="RMP Recruitment (Registered Manager Pathway) recruits, develops and places care staff across regulated services. More than an agency — we develop the people we place, from support worker to Registered Manager.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#13294a;--navy-d:#0d1f3a;--amber:#e3a43a;--amber-d:#c98a22;--teal:#2a9d8f;
+    --cream:#faf7f1;--card:#ffffff;--ink:#1a2535;--muted:#5a6677;--line:#e7e2d8;--maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:16px;padding:14px 24px;border-radius:999px;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:.15s;font-family:Inter,sans-serif}
+  .btn.amber{background:var(--amber);color:var(--navy-d)}
+  .btn.amber:hover{background:var(--amber-d)}
+  .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+  .btn.ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  .btn.navy{background:var(--navy);color:#fff}
+  .btn.navy:hover{background:var(--navy-d)}
+
+  nav{position:sticky;top:0;z-index:50;background:rgba(19,41,74,.97);backdrop-filter:blur(8px)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .brand{color:#fff;font-family:Fraunces,serif;font-weight:600;font-size:19px;text-decoration:none}
+  .brand b{color:var(--amber)}
+  nav .tel{color:#fff;text-decoration:none;font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px}
+  nav .tel:hover{color:var(--amber)}
+
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,#1a3a63 55%,var(--navy-d) 100%);color:#fff;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-180px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(227,164,58,.22),transparent 65%)}
+  .hero .wrap{position:relative;padding:84px 24px 88px;max-width:940px;text-align:center}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);background:rgba(227,164,58,.12);border:1px solid rgba(227,164,58,.3);padding:7px 16px;border-radius:999px;margin-bottom:26px}
+  .hero h1{font-size:clamp(34px,5.4vw,56px);color:#fff;margin-bottom:20px;font-weight:600}
+  .hero .lead{font-size:clamp(18px,2.4vw,22px);color:#dce6f2;max-width:720px;margin:0 auto 16px}
+  .hero .place{font-weight:600;color:#fff}
+  .hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:34px 0 22px}
+  .trust{font-size:14.5px;color:#aebfd4;max-width:660px;margin:0 auto}
+  .trust b{color:#fff}
+
+  /* TWO PATHS */
+  .paths{background:var(--navy-d)}
+  .paths .wrap{padding:30px 24px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .path{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:26px;color:#fff;text-align:center}
+  .path h3{font-size:21px;margin-bottom:6px}
+  .path p{color:#bccbe0;font-size:15px;margin-bottom:16px}
+
+  .pillars{background:#fff;border-bottom:1px solid var(--line)}
+  .pillars .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:0}
+  .pillar{padding:40px 30px;text-align:center;border-right:1px solid var(--line)}
+  .pillar:last-child{border-right:0}
+  .pillar .n{font-family:Fraunces,serif;font-size:15px;font-weight:700;color:var(--amber);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+  .pillar h3{font-size:23px;margin-bottom:8px}
+  .pillar p{font-size:15.5px;color:var(--muted)}
+
+  section.block{padding:74px 0}
+  .center{text-align:center;max-width:760px;margin:0 auto 14px}
+  .kicker{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+  h2{font-size:clamp(28px,3.8vw,40px);margin-bottom:16px}
+  .sec-lead{font-size:18px;color:var(--muted);max-width:700px;margin:0 auto}
+
+  .feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 30px;margin-top:40px;max-width:920px;margin-left:auto;margin-right:auto}
+  .feat{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .feat .tick{flex:none;width:26px;height:26px;border-radius:50%;background:var(--teal);display:grid;place-items:center;margin-top:1px}
+  .feat .tick svg{width:14px;height:14px;stroke:#fff;stroke-width:3;fill:none}
+  .feat span{font-weight:500;font-size:16px}
+
+  .alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .chips{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:32px}
+  .chips span{background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:11px 22px;font-weight:600;font-size:16px;color:var(--navy)}
+
+  .steps{background:linear-gradient(160deg,var(--navy),var(--navy-d));color:#fff}
+  .steps .kicker{color:var(--amber)}
+  .steps h2{color:#fff}
+  .steps .sec-lead{color:#bccbe0}
+  .steprow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:46px}
+  .step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:26px 18px;text-align:center}
+  .step .num{font-family:Fraunces,serif;font-size:28px;color:var(--amber);font-weight:700;margin-bottom:8px}
+  .step h4{font-size:17px;margin-bottom:6px;font-family:Inter,sans-serif;font-weight:700}
+  .step p{font-size:14px;color:#bccbe0}
+
+  .quote{background:var(--amber);color:var(--navy-d);text-align:center}
+  .quote .wrap{padding:60px 24px}
+  .quote p{font-family:Fraunces,serif;font-size:clamp(24px,3.3vw,33px);font-weight:600;max-width:880px;margin:0 auto;line-height:1.26}
+
+  .cta-sec{background:var(--navy-d);color:#fff}
+  .cta-sec .wrap{padding:72px 24px}
+  .cta-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+  .cta-grid h2{color:#fff;font-size:clamp(28px,3.6vw,40px)}
+  .cta-grid .lead{color:#bccbe0;font-size:18px;margin:14px 0 26px}
+  .callbox{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:22px 24px;margin-bottom:14px}
+  .callbox .lbl{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);font-weight:700;margin-bottom:4px}
+  .callbox a{font-family:Fraunces,serif;font-size:30px;font-weight:700;color:#fff;text-decoration:none}
+  form{background:#fff;border-radius:18px;padding:30px;color:var(--ink)}
+  form h3{font-size:22px;margin-bottom:4px}
+  form .fsub{color:var(--muted);font-size:14.5px;margin-bottom:18px}
+  .field{margin-bottom:13px}
+  label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:5px}
+  input,select,textarea{width:100%;font:inherit;font-size:15.5px;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:#fbfaf7}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--amber);border-color:var(--amber);background:#fff}
+  textarea{min-height:84px;resize:vertical}
+  form .btn{width:100%;justify-content:center;margin-top:6px}
+  .hp{position:absolute;left:-9999px}
+
+  footer{background:#0a1526;color:#9fb0c6;padding:48px 0 30px;font-size:14.5px}
+  footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  footer a{color:var(--amber);text-decoration:none}
+  .smallprint{border-top:1px solid rgba(255,255,255,.08);margin-top:28px;padding-top:20px;font-size:12.5px;color:#6f8199;line-height:1.6}
+
+  @media(max-width:860px){
+    .paths .wrap{grid-template-columns:1fr}.pillars .wrap{grid-template-columns:1fr}.pillar{border-right:0;border-bottom:1px solid var(--line)}
+    .feature-grid{grid-template-columns:1fr}.steprow{grid-template-columns:1fr 1fr}.cta-grid{grid-template-columns:1fr}
+    nav .tel span{display:none}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="brand">RMP <b>Recruitment</b></a>
+    <a href="tel:02046180163" class="tel">&#9742; <span>020 4618 0163</span></a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Registered Manager Pathway · Care Recruitment</span>
+    <h1>Care Recruitment That Develops Its People</h1>
+    <p class="lead">RMP Recruitment doesn't just place care staff — we <span class="place">recruit, develop and place</span> them. From support worker to Registered Manager, we build people who are ready, capable and worth keeping.</p>
+    <div class="cta">
+      <a href="#candidates" class="btn amber">I'm looking for work</a>
+      <a href="#providers" class="btn ghost">I need staff</a>
+    </div>
+    <p class="trust">Children's homes · supported accommodation · adult social care. <b>More than an agency — a development pathway.</b></p>
+  </div>
+</header>
+
+<section class="paths">
+  <div class="wrap">
+    <div class="path">
+      <h3>Looking for work?</h3>
+      <p>Find rewarding roles in care — and get developed, not just placed.</p>
+      <a href="#candidates" class="btn amber">For candidates</a>
+    </div>
+    <div class="path">
+      <h3>Looking for staff?</h3>
+      <p>Access developed, prepared, reliable care staff and future managers.</p>
+      <a href="#providers" class="btn amber">For providers</a>
+    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap">
+    <div class="pillar"><div class="n">Recruit</div><h3>We find good people</h3><p>Values-led care staff across every level, from frontline to management.</p></div>
+    <div class="pillar"><div class="n">Develop</div><h3>We build them up</h3><p>Training, safeguarding, leadership and a clear pathway towards Registered Manager.</p></div>
+    <div class="pillar"><div class="n">Place</div><h3>We match them well</h3><p>Prepared, profiled candidates placed where they'll do their best work.</p></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap center">
+    <div class="kicker">What makes us different</div>
+    <h2>We Don't Just Place People — We Develop Them</h2>
+    <p class="sec-lead">Most agencies supply a name and move on. RMP Recruitment develops the people it places — so candidates grow real careers and providers get staff who are prepared, capable and far more likely to stay.</p>
+  </div>
+</section>
+
+<section class="alt block" id="candidates" style="padding-top:0">
+  <div class="wrap">
+    <div class="center"><div class="kicker">For candidates</div><h2>Find Work — and Build a Real Career in Care</h2><p class="sec-lead">Join an agency that backs your development, not just your next shift.</p></div>
+    <div class="feature-grid">
+      <div class="feat"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span>Rewarding roles across regulated care settings</span></div>
+      <div class="feat"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span>Get developed, not just placed — real training &amp; support</span></div>
+      <div class="feat"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span>A clear pathway to senior, deputy &amp; Registered Manager</span></div>
+      <div class="feat"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span>Support with interviews, promotion &amp; inspection expectations</span></div>
+      <div class="feat"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span>Safeguarding &amp; therapeutic-practice development</span></div>
+      <div class="feat"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span>Progression based on values, reliability &amp; performance</span></div>
+    </div>
+    <div class="center" style="margin-top:20px"><div class="chips">
+      <span>Support workers</span><span>Senior support workers</span><span>Deputy managers</span>
+      <span>Registered Managers</span><span>Waking nights</span><span>Relief &amp; cover</span>
+    </div></div>
+  </div>
+</section>
+
+<section class="block" id="providers">
+  <div class="wrap">
+    <div class="center"><div class="kicker">For providers</div><h2>Staff Who Are Ready — and Future Managers in the Making</h2><p class="sec-lead">A recruitment partner that develops people, so you get capability and stability, not just cover.</p></div>
+    <div class="feature-grid">
+      <div class="feat"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span>Access developed, prepared, reliable care staff</span></div>
+      <div class="feat"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span>Reduced recruitment risk with trained, supported candidates</span></div>
+      <div class="feat"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span>A pipeline of future Registered Managers</span></div>
+      <div class="feat"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span>Staff who understand safeguarding &amp; professional boundaries</span></div>
+      <div class="feat"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span>Cover and placements across regulated care services</span></div>
+      <div class="feat"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span>A partner who develops people, improving retention &amp; quality</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps block">
+  <div class="wrap">
+    <div class="center"><div class="kicker">The RMP difference</div><h2>Recruited. Developed. Placed. Progressing.</h2><p class="sec-lead">The cycle that sets us apart from an ordinary agency.</p></div>
+    <div class="steprow">
+      <div class="step"><div class="num">1</div><h4>Recruited</h4><p>We find values-led people with potential.</p></div>
+      <div class="step"><div class="num">2</div><h4>Developed</h4><p>Training, safeguarding and leadership support.</p></div>
+      <div class="step"><div class="num">3</div><h4>Placed</h4><p>Matched to the right service and role.</p></div>
+      <div class="step"><div class="num">4</div><h4>Progressing</h4><p>On towards senior, deputy and manager.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="wrap">
+    <p>"Most agencies place a person and move on. We develop the people we place — so they grow, and the services they join get stronger."</p>
+  </div>
+</section>
+
+<section class="cta-sec" id="enquire">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div>
+        <div class="kicker" style="color:var(--amber)">Get in touch</div>
+        <h2>Let's Talk — Whether You Need Work or Need Staff</h2>
+        <p class="lead">Tell us what you're after and we'll come back to you. Candidates and providers both welcome.</p>
+        <div class="callbox">
+          <div class="lbl">Call us</div>
+          <a href="tel:02046180163">020 4618 0163</a>
+        </div>
+        <p style="font-size:14px;color:#9fb0c6">We recruit, develop and place — building better careers and stronger care services.</p>
+      </div>
+      <form name="rmp-recruitment-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="#enquire">
+        <input type="hidden" name="form-name" value="rmp-recruitment-enquiry">
+        <p class="hp"><label>Leave blank: <input name="bot-field"></label></p>
+        <h3>Send an enquiry</h3>
+        <p class="fsub">We'll get back to you quickly.</p>
+        <div class="field"><label>I am…</label><select name="enquiry_type"><option>Looking for work (candidate)</option><option>Looking for staff (provider)</option></select></div>
+        <div class="field"><label>Full name</label><input name="name" required></div>
+        <div class="field"><label>Organisation (providers)</label><input name="organisation" placeholder="Leave blank if you're a candidate"></div>
+        <div class="field"><label>Phone</label><input name="phone" type="tel" required></div>
+        <div class="field"><label>Email</label><input name="email" type="email" required></div>
+        <div class="field"><label>What do you need?</label><textarea name="message" placeholder="The role you want, or the staff you're looking for"></textarea></div>
+        <button type="submit" class="btn amber">Send enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand" style="color:#fff;font-family:Fraunces,serif">RMP <span style="color:var(--amber)">Recruitment</span></div>
+      <p style="margin-top:8px;max-width:420px">The recruitment arm of the Registered Manager Pathway — recruiting, developing and placing care staff across regulated services.</p>
+    </div>
+    <div>
+      <p style="font-weight:700;color:#fff;margin-bottom:6px">Get in touch</p>
+      <p>Call: <a href="tel:02046180163">020 4618 0163</a></p>
+      <p>Candidates &amp; providers: <a href="#enquire">send an enquiry</a></p>
+    </div>
+  </div>
+  <div class="wrap smallprint">
+    RMP Recruitment is committed to safeguarding and safer recruitment. All candidates are subject to enhanced DBS checks, satisfactory references and right-to-work verification. Placement, development and progression arrangements are confirmed in writing. Registration decisions remain with Ofsted, CQC or the relevant regulator, and final appointment decisions remain with the provider.
+  </div>
+</footer>
+
+</body>
+</html>
