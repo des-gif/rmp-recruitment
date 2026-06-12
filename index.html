@@ -119,6 +119,10 @@
     .feature-grid{grid-template-columns:1fr}.steprow{grid-template-columns:1fr 1fr}.cta-grid{grid-template-columns:1fr}
     nav .tel span{display:none}
   }
+  nav .nav-menu{display:flex;align-items:center;gap:20px}
+  nav .nav-menu a{color:#fff;text-decoration:none;font-weight:600;font-size:14.5px;white-space:nowrap;transition:.15s}
+  nav .nav-menu a:hover{color:var(--amber)}
+  @media(max-width:900px){nav .nav-menu{display:none}}
 </style>
 </head>
 <body>
@@ -126,6 +130,11 @@
 <nav>
   <div class="wrap">
     <a href="#top" class="brand">RMP <b>Recruitment</b></a>
+    <div class="nav-menu">
+      <a href="#candidates">Social Care</a>
+      <a href="#healthcare">Doctors &amp; nurses</a>
+      <a href="https://plab-bridge-img.netlify.app" target="_blank" rel="noopener">PLAB 1 preparation for IMG doctors</a>
+    </div>
     <a href="tel:02046180163" class="tel">&#9742; <span>020 4618 0163</span></a>
   </div>
 </nav>
