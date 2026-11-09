@@ -124,6 +124,118 @@
   nav .nav-menu a:first-child{border-left:none;padding-left:0}
   nav .nav-menu a:hover{color:var(--amber)}
   @media(max-width:900px){nav .nav-menu{display:none}}
+
+  /* ===== 2026-11 refresh: pictures, clickable candidate journeys ===== */
+  .hero{background:linear-gradient(100deg,rgba(13,31,58,.94) 0%,rgba(19,41,74,.82) 45%,rgba(19,41,74,.35) 100%),url(images/site/hero-care-team.jpg) center 30%/cover}
+  .hero .wrap{text-align:left;max-width:var(--maxw);padding:110px 24px 120px}
+  .hero .wrap > *{max-width:640px}
+  .hero .lead{margin:0 0 16px}
+  .hero .cta{justify-content:flex-start}
+  .trust{margin:0}
+  nav .nav-cta{background:var(--amber);color:var(--navy-d);text-decoration:none;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px;white-space:nowrap}
+  nav .nav-cta:hover{background:#f0b54d}
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  .choose{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:40px auto 10px;max-width:1000px}
+  .choose a{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+  .choose a:hover,.choose a:focus-visible{transform:translateY(-5px);box-shadow:0 18px 40px rgba(19,41,74,.14)}
+  .choose img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+  .choose .cbody{padding:18px 20px 22px}
+  .choose h3{font-size:21px;margin-bottom:4px;color:var(--navy)}
+  .choose p{font-size:15px;color:var(--muted)}
+  .choose .go{display:inline-block;margin-top:10px;font-weight:700;color:var(--teal)}
+
+  .split{display:grid;grid-template-columns:1.05fr 1fr;gap:46px;align-items:center}
+  .split img{width:100%;border-radius:22px;aspect-ratio:3/2;object-fit:cover;box-shadow:0 20px 50px rgba(19,41,74,.18)}
+  .notice{background:#fff7e8;border:1px solid #f0d49a;border-radius:16px;padding:20px 22px;margin:18px 0}
+  .notice b{color:var(--navy)}
+
+  /* Find my care role */
+  .finder{background:linear-gradient(160deg,#eaf6f4,#fdf6e9);}
+  .fcard{background:#fff;border-radius:24px;box-shadow:0 20px 60px rgba(19,41,74,.12);padding:34px;max-width:780px;margin:36px auto 0;color:var(--ink)}
+  .fprog{display:flex;gap:6px;margin-bottom:22px}
+  .fprog i{flex:1;height:6px;border-radius:9px;background:var(--line);transition:background .3s}
+  .fprog i.on{background:var(--teal)}
+  .fstep{display:none;border:0}
+  .fstep.on{display:block;animation:fin .35s ease}
+  @keyframes fin{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
+  .fstep legend{font-family:Fraunces,serif;font-size:24px;font-weight:600;margin-bottom:6px;color:var(--navy)}
+  .fstep .hint{color:var(--muted);font-size:15px;margin-bottom:16px}
+  .opts{display:flex;flex-wrap:wrap;gap:10px}
+  .opt{position:relative}
+  .opt input{position:absolute;opacity:0;width:1px;height:1px}
+  .opt span{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border:2px solid var(--line);border-radius:999px;font-weight:600;font-size:15.5px;cursor:pointer;transition:.15s;background:#fbfaf7;color:var(--navy)}
+  .opt span:hover{border-color:var(--teal)}
+  .opt input:checked + span{background:var(--teal);border-color:var(--teal);color:#fff}
+  .opt input:focus-visible + span{outline:3px solid var(--amber);outline-offset:2px}
+  .fnav{display:flex;justify-content:space-between;gap:12px;margin-top:26px}
+  .fnav .btn{padding:12px 22px}
+  .btn.light{background:#eef1f5;color:var(--navy)}
+  .ferr{color:#b3261e;font-weight:600;font-size:14.5px;margin-top:12px;min-height:1px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .tick-line{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--muted);margin-top:10px}
+  .tick-line input{width:auto;margin-top:4px}
+  .fdone{text-align:center;padding:10px 0}
+  .fdone .big{font-size:46px}
+  .fdone ul{list-style:none;margin:16px auto;max-width:520px;text-align:left}
+  .fdone li{padding:8px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+  .fdone li b{color:var(--navy)}
+
+  /* New to care cards */
+  .ntc{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+  .ncard{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+  .ncard img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+  .ncard .nb{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column}
+  .ncard h3{font-size:22px;color:var(--navy);margin-bottom:6px}
+  .ncard p.short{color:var(--muted);font-size:15.5px}
+  .ncard details{margin-top:12px;border-top:1px solid var(--line)}
+  .ncard summary{cursor:pointer;font-weight:700;color:var(--teal);padding:12px 0 6px;list-style:none}
+  .ncard summary::-webkit-details-marker{display:none}
+  .ncard summary::after{content:" +"}
+  .ncard details[open] summary::after{content:" –"}
+  .ncard dl{font-size:15px}
+  .ncard dt{font-weight:700;color:var(--navy);margin-top:10px}
+  .ncard dd{color:var(--muted)}
+
+  /* Why RMP picture cards */
+  .why{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+  .wcard{position:relative;border-radius:20px;overflow:hidden;min-height:320px;display:flex;align-items:flex-end;color:#fff}
+  .wcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .wcard:hover img{transform:scale(1.05)}
+  .wcard .wt{position:relative;padding:22px;background:linear-gradient(transparent,rgba(13,31,58,.92) 40%);width:100%}
+  .wcard h3{font-size:22px;margin-bottom:4px}
+  .wcard p{font-size:15px;color:#dce6f2}
+
+  /* What happens next + FAQ */
+  .journey{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:40px;counter-reset:j}
+  .jstep{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:22px 16px;text-align:center}
+  .jstep .ic{font-size:30px;margin-bottom:6px}
+  .jstep h4{font-family:Inter,sans-serif;font-size:16px;font-weight:700;margin-bottom:4px}
+  .jstep p{font-size:14px;color:#bccbe0}
+  .faq{max-width:800px;margin:40px auto 0}
+  .faq details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:10px;padding:0 20px}
+  .faq summary{cursor:pointer;font-weight:700;padding:17px 0;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--teal);font-size:22px;line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{padding:0 0 18px;color:var(--muted)}
+
+  .raj{display:flex;gap:16px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:18px 20px;margin-bottom:14px}
+  .raj .av{flex:none;width:58px;height:58px;border-radius:50%;background:var(--amber);color:var(--navy-d);display:grid;place-items:center;font-family:Fraunces,serif;font-weight:700;font-size:22px}
+  .raj .lbl{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);font-weight:700}
+  .raj .nm{font-family:Fraunces,serif;font-size:24px;font-weight:700;color:#fff}
+
+  @media(max-width:860px){
+    .choose,.ntc,.why{grid-template-columns:1fr}
+    .split{grid-template-columns:1fr;gap:26px}
+    .journey{grid-template-columns:1fr 1fr}
+    .two{grid-template-columns:1fr}
+    .fcard{padding:24px 20px}
+    .hero .wrap{padding:80px 24px 90px}
+    .hero{background-position:65% 30%}
+  }
 </style>
 </head>
 <body>
@@ -137,6 +249,7 @@
       <a href="https://plab-bridge-img.netlify.app" target="_blank" rel="noopener">PLAB 1 preparation for IMG doctors</a>
     </div>
     <a href="tel:02046180163" class="tel">&#9742; <span>020 4618 0163</span></a>
+    <a href="#find-my-care-role" class="nav-cta">Find my care role</a>
   </div>
 </nav>
 
@@ -146,7 +259,8 @@
     <h1>Care Recruitment That Develops Its People</h1>
     <p class="lead">RMP Recruitment doesn't just place care staff — we <span class="place">recruit, develop and place</span> them. From support worker to Registered Manager, we build people who are ready, capable and worth keeping.</p>
     <div class="cta">
-      <a href="#candidates" class="btn amber">I'm looking for work</a>
+      <a href="#find-my-care-role" class="btn amber">Find my care role</a>
+      <a href="#candidates" class="btn ghost">I'm looking for work</a>
       <a href="#providers" class="btn ghost">I need staff</a>
     </div>
     <p class="trust">Children's homes · supported accommodation · adult social care. <b>More than an agency — a development pathway.</b></p>
@@ -186,7 +300,12 @@
 
 <section class="alt block" id="candidates" style="padding-top:0">
   <div class="wrap">
-    <div class="center"><div class="kicker">For candidates</div><h2>Find Work — and Build a Real Career in Care</h2><p class="sec-lead">Join an agency that backs your development, not just your next shift.</p></div>
+    <div class="center" style="padding-top:74px"><div class="kicker">For candidates</div><h2>Find a Care Role That Fits Your Life</h2><p class="sec-lead">Looking for your first role in care or ready for a change? Pick the route that suits you. If you can't see the right role, tell us what you're looking for. No CV needed.</p></div>
+    <div class="choose">
+      <a href="#live-vacancies" class="reveal"><img src="images/site/browse-vacancies.jpg" alt="A woman looking at care jobs on her laptop at home" loading="lazy"><div class="cbody"><h3>Browse live vacancies</h3><p>See the roles we're recruiting for now.</p><span class="go">See roles &rarr;</span></div></a>
+      <a href="#find-my-care-role" class="reveal"><img src="images/site/find-my-care-role.jpg" alt="A recruiter smiling and listening to a candidate" loading="lazy"><div class="cbody"><h3>Find my care role</h3><p>Answer six quick questions and we'll match you.</p><span class="go">Start now &rarr;</span></div></a>
+      <a href="#new-to-care" class="reveal"><img src="images/site/new-to-care.jpg" alt="A new starter going through induction notes with an experienced colleague" loading="lazy"><div class="cbody"><h3>New to care? Start here</h3><p>See what each type of care work is really like.</p><span class="go">Explore &rarr;</span></div></a>
+    </div>
     <div class="feature-grid">
       <div class="feat"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span>Rewarding roles across regulated care settings</span></div>
       <div class="feat"><span class="tick"><svg viewBox="0 0 24 24"><polyline points="4,12 10,18 20,6"/></svg></span><span>Get developed, not just placed — real training &amp; support</span></div>
@@ -199,6 +318,185 @@
       <span>Support workers</span><span>Senior support workers</span><span>Deputy managers</span>
       <span>Registered Managers</span><span>Waking nights</span><span>Relief &amp; cover</span>
     </div></div>
+  </div>
+</section>
+
+<section class="block" id="live-vacancies">
+  <div class="wrap split">
+    <div class="reveal">
+      <div class="kicker">Live vacancies</div>
+      <h2>Roles We're Recruiting For</h2>
+      <div class="notice"><b>No roles are listed here right now.</b> We're adding vacancies soon. Tell us what you're looking for and we'll contact you when a role matches.</div>
+      <p style="color:var(--muted);margin-bottom:22px">We recruit for support workers, seniors, deputies and Registered Managers across children's homes, supported living and adult care, including days, nights, weekends and relief work.</p>
+      <a href="#find-my-care-role" class="btn navy">Tell us what you're looking for</a>
+    </div>
+    <img class="reveal" src="images/site/browse-vacancies.jpg" alt="A woman browsing care roles on her laptop" loading="lazy">
+  </div>
+</section>
+
+<section class="finder block" id="find-my-care-role">
+  <div class="wrap">
+    <div class="center reveal"><div class="kicker">Find my care role</div><h2>Six Quick Questions, About a Minute</h2><p class="sec-lead">Tell us what suits you and we'll be in touch about roles that match. This is not an application, and you don't need a CV.</p></div>
+    <div class="fcard">
+      <form id="finder" name="find-my-care-role" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="padding:0;background:none" novalidate>
+        <input type="hidden" name="form-name" value="find-my-care-role">
+        <p class="hp"><label>Leave blank: <input name="bot-field"></label></p>
+        <div class="fprog" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <fieldset class="fstep on" data-step="1">
+          <legend>What role are you interested in?</legend>
+          <p class="hint">Pick as many as you like.</p>
+          <div class="opts">
+            <label class="opt"><input type="checkbox" name="role" value="Support worker"><span>Support worker</span></label>
+            <label class="opt"><input type="checkbox" name="role" value="Senior support worker"><span>Senior support worker</span></label>
+            <label class="opt"><input type="checkbox" name="role" value="Deputy manager"><span>Deputy manager</span></label>
+            <label class="opt"><input type="checkbox" name="role" value="Registered Manager"><span>Registered Manager</span></label>
+            <label class="opt"><input type="checkbox" name="role" value="Waking nights"><span>Waking nights</span></label>
+            <label class="opt"><input type="checkbox" name="role" value="Open to suggestions"><span>I'm open to suggestions</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fstep" data-step="2">
+          <legend>Where would you like to work?</legend>
+          <p class="hint">A town or the first part of your postcode is enough.</p>
+          <div class="two">
+            <div class="field"><label for="f-area">Town or postcode area</label><input id="f-area" name="area" placeholder="e.g. Lewisham or SE13" autocomplete="address-level2"></div>
+            <div class="field"><label for="f-dist">How far would you travel?</label><select id="f-dist" name="travel"><option>Up to 5 miles</option><option selected>Up to 10 miles</option><option>Up to 20 miles</option><option>Anywhere in London</option></select></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fstep" data-step="3">
+          <legend>Which settings interest you?</legend>
+          <p class="hint">Not sure? That's fine, pick "Not sure yet".</p>
+          <div class="opts">
+            <label class="opt"><input type="checkbox" name="setting" value="Adult supported living"><span>Adult supported living</span></label>
+            <label class="opt"><input type="checkbox" name="setting" value="Adult care homes"><span>Adult care homes</span></label>
+            <label class="opt"><input type="checkbox" name="setting" value="Children's residential care"><span>Children's residential care</span></label>
+            <label class="opt"><input type="checkbox" name="setting" value="Not sure yet"><span>Not sure yet</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fstep" data-step="4">
+          <legend>What shifts work for you?</legend>
+          <p class="hint">Pick all that apply.</p>
+          <div class="opts">
+            <label class="opt"><input type="checkbox" name="shifts" value="Days"><span>Days</span></label>
+            <label class="opt"><input type="checkbox" name="shifts" value="Nights"><span>Nights</span></label>
+            <label class="opt"><input type="checkbox" name="shifts" value="Weekends"><span>Weekends</span></label>
+            <label class="opt"><input type="checkbox" name="shifts" value="Full-time"><span>Full-time</span></label>
+            <label class="opt"><input type="checkbox" name="shifts" value="Part-time"><span>Part-time</span></label>
+            <label class="opt"><input type="checkbox" name="shifts" value="Flexible / relief"><span>Flexible / relief</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fstep" data-step="5">
+          <legend>What experience do you have?</legend>
+          <p class="hint">Everyone starts somewhere, and new starters are welcome.</p>
+          <div class="opts">
+            <label class="opt"><input type="radio" name="experience" value="New to care"><span>New to care</span></label>
+            <label class="opt"><input type="radio" name="experience" value="Transferable experience"><span>Transferable experience</span></label>
+            <label class="opt"><input type="radio" name="experience" value="Care experience"><span>Care experience</span></label>
+            <label class="opt"><input type="radio" name="experience" value="Senior or management"><span>Senior or management</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="fstep" data-step="6">
+          <legend>How should we contact you?</legend>
+          <p class="hint">Give us an email or a phone number (or both).</p>
+          <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name"></div>
+          <div class="two">
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+            <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+          </div>
+          <div class="field"><label for="f-pref">Best way to reach you</label><select id="f-pref" name="contact_preference"><option>Phone call</option><option>Text / WhatsApp</option><option>Email</option></select></div>
+          <label class="tick-line"><input type="checkbox" name="job_alerts" value="Yes"> Send me job alerts when new roles match (optional; you can stop them at any time).</label>
+        </fieldset>
+
+        <p class="ferr" id="ferr" role="alert"></p>
+        <div class="fnav">
+          <button type="button" class="btn light" id="fback" style="visibility:hidden">&larr; Back</button>
+          <button type="button" class="btn amber" id="fnext">Next &rarr;</button>
+        </div>
+      </form>
+      <div class="fdone" id="fdone" hidden tabindex="-1">
+        <div class="big">&#127881;</div>
+        <h3 style="font-size:26px;color:var(--navy)">Thanks, you're registered</h3>
+        <p style="color:var(--muted)">Here's what you told us. Raj and the team will be in touch about roles that match. This is a job suggestion service, not an offer or a decision about eligibility.</p>
+        <ul id="fsum"></ul>
+        <a href="#new-to-care" class="btn navy">While you wait: what's care work like?</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt block" id="new-to-care">
+  <div class="wrap">
+    <div class="center reveal"><div class="kicker">New to care? Start here</div><h2>What Is Care Work Really Like?</h2><p class="sec-lead">Three settings, three different days. Tap a card to see a typical shift, the skills that transfer and the training you'll get.</p></div>
+    <div class="ntc">
+      <div class="ncard reveal"><img src="images/site/supported-living.jpg" alt="A support worker cooking with a young man in his own kitchen" loading="lazy"><div class="nb">
+        <h3>Adult Supported Living</h3><p class="short">Helping adults with learning disabilities, autism or mental health needs live in their own homes, their way.</p>
+        <details><summary>See a typical shift</summary><dl>
+          <dt>Who you support</dt><dd>Adults living in their own flat or a shared house, with the support written in their plan.</dd>
+          <dt>A typical shift</dt><dd>Cooking and shopping together, appointments, medication support, community trips and building independence.</dd>
+          <dt>Skills that transfer</dt><dd>Patience, cooking, driving, retail or hospitality, caring for family.</dd>
+          <dt>Training</dt><dd>Induction, safeguarding, medication and the Care Certificate.</dd>
+        </dl></details></div></div>
+      <div class="ncard reveal"><img src="images/site/adult-care-homes.jpg" alt="A care worker sharing a cup of tea with an older man in a garden" loading="lazy"><div class="nb">
+        <h3>Adult Care Homes</h3><p class="short">Caring for older adults and adults with complex needs in a residential home.</p>
+        <details><summary>See a typical shift</summary><dl>
+          <dt>Who you support</dt><dd>Residents who need help with daily living, often including people living with dementia.</dd>
+          <dt>A typical shift</dt><dd>Personal care, mealtimes, activities, company and conversation, and keeping records up to date.</dd>
+          <dt>Skills that transfer</dt><dd>Kindness, good listening, teamwork, customer service.</dd>
+          <dt>Training</dt><dd>Induction, moving and handling, safeguarding and the Care Certificate.</dd>
+        </dl></details></div></div>
+      <div class="ncard reveal"><img src="images/site/childrens-residential-care.jpg" alt="Two residential care workers planning together in a homely living room" loading="lazy"><div class="nb">
+        <h3>Children's Residential Care</h3><p class="short">Giving children and young people a safe, stable and caring home.</p>
+        <details><summary>See a typical shift</summary><dl>
+          <dt>Who you support</dt><dd>Children and young people living in a children's home, regulated by Ofsted.</dd>
+          <dt>A typical shift</dt><dd>School runs, homework, meals, activities, keeping children safe and following each child's care plan.</dd>
+          <dt>Skills that transfer</dt><dd>Youth work, coaching, teaching support, parenting, staying calm under pressure.</dd>
+          <dt>Training</dt><dd>Induction, safeguarding, therapeutic approaches, and the Level 3 Diploma in Residential Childcare.</dd>
+        </dl></details></div></div>
+    </div>
+    <div class="center" style="margin-top:30px"><a href="#find-my-care-role" class="btn amber">Help me choose</a></div>
+  </div>
+</section>
+
+<section class="block" id="why-rmp">
+  <div class="wrap">
+    <div class="center reveal"><div class="kicker">Why work with RMP</div><h2>We Back You All the Way</h2></div>
+    <div class="why">
+      <div class="wcard reveal"><img src="images/site/support-at-work.jpg" alt="A manager in a one-to-one supervision conversation" loading="lazy"><div class="wt"><h3>Support at work</h3><p>Regular one-to-ones and someone to call when you need advice.</p></div></div>
+      <div class="wcard reveal"><img src="images/site/flexible-shifts.jpg" alt="A care worker checking her shifts on her phone before leaving home" loading="lazy"><div class="wt"><h3>Shifts that fit your life</h3><p>Days, nights, weekends or relief: tell us what works for you.</p></div></div>
+      <div class="wcard reveal"><img src="images/site/interview-preparation.jpg" alt="A candidate smiling during a relaxed interview" loading="lazy"><div class="wt"><h3>Interview preparation</h3><p>We help you get ready, so you walk in confident.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="steps block" id="next-steps">
+  <div class="wrap">
+    <div class="center reveal"><div class="kicker">What happens next</div><h2>From Hello to Your First Shift</h2><p class="sec-lead">Registering interest just tells us what you're looking for. A full application comes later, for a specific role.</p></div>
+    <div class="journey">
+      <div class="jstep reveal"><div class="ic">&#128269;</div><h4>Explore</h4><p>Find a role or tell us what you want.</p></div>
+      <div class="jstep reveal"><div class="ic">&#128221;</div><h4>Apply</h4><p>A simple application for the role.</p></div>
+      <div class="jstep reveal"><div class="ic">&#128172;</div><h4>Interview</h4><p>A friendly chat, and we help you prepare.</p></div>
+      <div class="jstep reveal"><div class="ic">&#9989;</div><h4>Checks</h4><p>Enhanced DBS, references and right to work.</p></div>
+      <div class="jstep reveal"><div class="ic">&#127775;</div><h4>Start</h4><p>Induction, training and your first shift.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="center reveal"><div class="kicker">Questions</div><h2>Common Questions</h2></div>
+    <div class="faq">
+      <details><summary>Do I need care experience?</summary><p>No. Many of our roles welcome people new to care, with full induction and training. Tell us your experience in Find my care role and we'll match you to the right roles.</p></details>
+      <details><summary>What will I be paid?</summary><p>Pay depends on the role, the setting and the shift. We confirm the pay for each role before you apply.</p></details>
+      <details><summary>Can I choose my shifts?</summary><p>Tell us what works for you (days, nights, weekends, full-time, part-time or relief) and we'll look for roles that fit.</p></details>
+      <details><summary>What training will I get?</summary><p>Induction, safeguarding and the core training for your setting, plus development towards senior, deputy and Registered Manager roles.</p></details>
+      <details><summary>What checks will you do?</summary><p>All candidates need an enhanced DBS check, satisfactory references and proof of right to work. We'll guide you through each one.</p></details>
+      <details><summary>I need adjustments to apply. Can you help?</summary><p>Yes. Call us on 020 4618 0163 or use the enquiry form and tell us what would help.</p></details>
+    </div>
   </div>
 </section>
 
@@ -268,6 +566,10 @@
         <div class="kicker" style="color:var(--amber)">Get in touch</div>
         <h2>Let's Talk — Whether You Need Work or Need Staff</h2>
         <p class="lead">Tell us what you're after and we'll come back to you. Candidates and providers both welcome.</p>
+        <div class="raj">
+          <div class="av">RS</div>
+          <div><div class="lbl">Your main contact</div><div class="nm">Raj Singh</div></div>
+        </div>
         <div class="callbox">
           <div class="lbl">Call us</div>
           <a href="tel:02046180163">020 4618 0163</a>
@@ -308,5 +610,76 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  // Gentle reveal on scroll
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  } else els.forEach(function(el){el.classList.add('in')});
+
+  // Find my care role: step-by-step form
+  var form=document.getElementById('finder'); if(!form) return;
+  var steps=form.querySelectorAll('.fstep'), bars=form.querySelectorAll('.fprog i');
+  var back=document.getElementById('fback'), next=document.getElementById('fnext'), err=document.getElementById('ferr');
+  var cur=0;
+  function vals(n){return Array.prototype.map.call(form.querySelectorAll('[name="'+n+'"]:checked'),function(i){return i.value})}
+  function check(i){
+    var s=i+1;
+    if(s===1&&!vals('role').length) return 'Pick at least one role (or "I\'m open to suggestions").';
+    if(s===2&&!form.area.value.trim()) return 'Tell us a town or postcode area.';
+    if(s===3&&!vals('setting').length) return 'Pick at least one setting (or "Not sure yet").';
+    if(s===4&&!vals('shifts').length) return 'Pick at least one shift pattern.';
+    if(s===5&&!vals('experience').length) return 'Pick the option closest to your experience.';
+    if(s===6){
+      if(!form.elements['name'].value.trim()) return 'Please add your name.';
+      var em=form.email.value.trim(), ph=form.phone.value.trim();
+      if(!em&&!ph) return 'Add an email or a phone number so we can reach you.';
+      if(em&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) return 'That email address doesn\'t look right.';
+      if(ph&&ph.replace(/[^0-9]/g,'').length<10) return 'That phone number looks too short.';
+    }
+    return '';
+  }
+  function show(i){
+    steps.forEach(function(s,k){s.classList.toggle('on',k===i)});
+    bars.forEach(function(b,k){b.classList.toggle('on',k<=i)});
+    back.style.visibility=i?'visible':'hidden';
+    next.innerHTML=i===steps.length-1?'Send my details':'Next &rarr;';
+    err.textContent='';
+    var f=steps[i].querySelector('input:not([type=hidden]),select'); if(f&&cur!==i) f.focus({preventScroll:true});
+    cur=i;
+  }
+  back.addEventListener('click',function(){if(cur>0) show(cur-1)});
+  next.addEventListener('click',function(){
+    var m=check(cur); if(m){err.textContent=m;return;}
+    if(cur<steps.length-1){show(cur+1);return;}
+    send();
+  });
+  form.addEventListener('submit',function(e){e.preventDefault();next.click();});
+  form.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.tagName==='INPUT'){e.preventDefault();next.click();}});
+  function send(){
+    var data={'form-name':'find-my-care-role','bot-field':form['bot-field'].value,
+      role:vals('role').join(', '),area:form.area.value.trim(),travel:form.travel.value,
+      setting:vals('setting').join(', '),shifts:vals('shifts').join(', '),experience:vals('experience').join(', '),
+      name:form.elements['name'].value.trim(),email:form.email.value.trim(),phone:form.phone.value.trim(),
+      contact_preference:form.contact_preference.value,job_alerts:form.job_alerts.checked?'Yes':'No'};
+    next.disabled=true; next.textContent='Sending…';
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:Object.keys(data).map(function(k){return encodeURIComponent(k)+'='+encodeURIComponent(data[k])}).join('&')})
+    .then(function(r){
+      if(!r.ok) throw new Error('bad');
+      var rows=[['Roles',data.role],['Area',data.area+' ('+data.travel.toLowerCase()+')'],['Settings',data.setting],['Shifts',data.shifts],['Experience',data.experience],['Contact',data.contact_preference]];
+      var ul=document.getElementById('fsum'); ul.innerHTML='';
+      rows.forEach(function(r){var li=document.createElement('li');var b=document.createElement('b');b.textContent=r[0]+': ';li.appendChild(b);li.appendChild(document.createTextNode(r[1]));ul.appendChild(li);});
+      form.hidden=true; var d=document.getElementById('fdone'); d.hidden=false; d.focus();
+    })
+    .catch(function(){
+      next.disabled=false; next.textContent='Send my details';
+      err.textContent='Sorry, that didn\'t send. Please try again, or call us on 020 4618 0163.';
+    });
+  }
+})();
+</script>
 </body>
 </html>
