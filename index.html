@@ -126,12 +126,32 @@
   @media(max-width:900px){nav .nav-menu{display:none}}
 
   /* ===== 2026-11 refresh: pictures, clickable candidate journeys ===== */
-  .hero{background:linear-gradient(100deg,rgba(13,31,58,.94) 0%,rgba(19,41,74,.82) 45%,rgba(19,41,74,.35) 100%),url(images/site/hero-care-team.jpg) center 30%/cover}
-  .hero .wrap{text-align:left;max-width:var(--maxw);padding:110px 24px 120px}
-  .hero .wrap > *{max-width:640px}
-  .hero .lead{margin:0 0 16px}
-  .hero .cta{justify-content:flex-start}
-  .trust{margin:0}
+  /* Light, bright hero: text on cream, full-colour photo */
+  .hero{background:linear-gradient(180deg,#fdf8ef 0%,#f6efe2 100%);color:var(--ink)}
+  .hero::after{display:none}
+  .hero .wrap{text-align:left;max-width:var(--maxw);padding:64px 24px 72px;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+  .hero h1{color:var(--navy)}
+  .hero .lead{color:#3d4a5c;margin:0 0 16px}
+  .hero .place{color:var(--navy)}
+  .hero .eyebrow{color:var(--amber-d);background:#fff;border-color:#f0d49a}
+  .hero .cta{justify-content:flex-start;margin:28px 0 20px}
+  .hero .btn.ghost{color:var(--navy);border-color:var(--navy)}
+  .hero .btn.ghost:hover{background:var(--navy);color:#fff}
+  .hero .trust{color:var(--muted);margin:0}
+  .hero .trust b{color:var(--navy)}
+  .hero-pic{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 30%;border-radius:26px;box-shadow:0 24px 60px rgba(19,41,74,.22);display:block}
+  /* Lighter step sections */
+  .steps{background:linear-gradient(160deg,#eaf6f4,#f3f8fb);color:var(--ink)}
+  .steps .kicker{color:var(--teal)}
+  .steps h2{color:var(--navy)}
+  .steps .sec-lead{color:var(--muted)}
+  .step,.jstep{background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(19,41,74,.06)}
+  .step p,.jstep p{color:var(--muted)}
+  .step h4,.jstep h4{color:var(--navy)}
+  .paths{background:#fff}
+  .path{background:var(--cream);border-color:var(--line);color:var(--ink)}
+  .path h3{color:var(--navy)}
+  .path p{color:var(--muted)}
   nav .nav-cta{background:var(--amber);color:var(--navy-d);text-decoration:none;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px;white-space:nowrap}
   nav .nav-cta:hover{background:#f0b54d}
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
@@ -235,8 +255,8 @@
     .journey{grid-template-columns:1fr 1fr}
     .two{grid-template-columns:1fr}
     .fcard{padding:24px 20px}
-    .hero .wrap{padding:80px 24px 90px}
-    .hero{background-position:65% 30%}
+    .hero .wrap{grid-template-columns:1fr;gap:28px;padding:36px 24px 56px}
+    .hero-pic{order:-1;aspect-ratio:3/2}
   }
 </style>
 </head>
@@ -257,6 +277,7 @@
 
 <header class="hero" id="top">
   <div class="wrap">
+    <div>
     <span class="eyebrow">Registered Manager Pathway · Care Recruitment</span>
     <h1>Care Recruitment That Develops Its People</h1>
     <p class="lead">RMP Recruitment doesn't just place care staff — we <span class="place">recruit, develop and place</span> them. From support worker to Registered Manager, we build people who are ready, capable and worth keeping.</p>
@@ -266,6 +287,8 @@
       <a href="#providers" class="btn ghost">I need staff</a>
     </div>
     <p class="trust">Children's homes · supported accommodation · adult social care. <b>More than an agency — a development pathway.</b></p>
+    </div>
+    <img class="hero-pic" src="images/site/hero-care-team.jpg" alt="A smiling team of care workers in a bright, homely lounge">
   </div>
 </header>
 
