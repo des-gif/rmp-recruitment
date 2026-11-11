@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>RMP Recruitment — Care Recruitment That Develops Leaders</title>
+<title>RMP Recruitment — Care recruitment with a path to leadership</title>
 <meta name="description" content="RMP Recruitment (Registered Manager Pathway) recruits, develops and places care staff across regulated services. More than an agency — we develop the people we place, from support worker to Registered Manager.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,6 +61,46 @@
   .pillar p{font-size:15.5px;color:var(--muted)}
 
   section.block{padding:74px 0}
+  /* Leadership self-assessment (Des, 11 Nov 2026) */
+  .lsa-card{margin-top:34px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 30px 28px;display:grid;grid-template-columns:1fr auto;gap:18px 28px;align-items:center}
+  .lsa-card h3{font-size:26px;color:var(--navy);margin-bottom:8px}
+  .lsa-card p{color:var(--muted);font-size:16px;max-width:640px}
+  .lsa{margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px}
+  .lsa[hidden]{display:none}
+  .lsa .note{background:var(--cream);border-radius:14px;padding:16px 18px;font-size:15.5px;color:var(--ink);margin-bottom:22px}
+  .lsa .meta{display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:600;color:var(--muted);margin-bottom:8px}
+  .lsa .bar{height:8px;background:#eef1f5;border-radius:99px;overflow:hidden;margin-bottom:24px}
+  .lsa .bar span{display:block;height:100%;background:var(--amber);border-radius:99px;transition:width .2s}
+  .lsa fieldset{border:0}
+  .lsa legend{font-family:Fraunces,Georgia,serif;font-size:23px;font-weight:600;color:var(--navy);line-height:1.25;margin-bottom:6px}
+  .lsa .prompt{font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+  .lsa .area{font-size:14px;color:var(--muted);margin-bottom:16px}
+  .lsa .opts{display:grid;gap:10px;margin-top:14px}
+  .lsa .lsa-opt{display:flex;gap:12px;align-items:flex-start;border:2px solid var(--line);border-radius:14px;padding:13px 16px;cursor:pointer;font-size:16px;background:#fff}
+  .lsa .lsa-opt:hover{border-color:#cfd6e0}
+  .lsa .lsa-opt input{margin-top:4px;width:18px;height:18px;accent-color:var(--navy);flex:none}
+  .lsa .lsa-opt:has(input:checked){border-color:var(--navy);background:#f5f7fb}
+  .lsa .lsa-opt:has(input:focus-visible){outline:3px solid var(--amber);outline-offset:2px}
+  .lsa .lsa-opt b{color:var(--navy);margin-right:4px}
+  .lsa .nav{display:flex;justify-content:space-between;gap:12px;margin-top:24px;flex-wrap:wrap}
+  .lsa .err{color:#b42318;font-size:15px;font-weight:600;margin-top:12px;min-height:1px}
+  .lsa .btn:focus-visible,.lsa-card .btn:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+  .lsa h3{font-size:24px;color:var(--navy);margin:0 0 10px}
+  .lsa .scores{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 28px;margin:18px 0 26px}
+  .lsa .sc .row{display:flex;justify-content:space-between;font-size:15.5px;font-weight:600;color:var(--ink);margin-bottom:6px}
+  .lsa .sc .row span:last-child{color:var(--navy)}
+  .lsa .sc .bar{margin:0;height:10px}
+  .lsa .panel{border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:16px}
+  .lsa .panel h4{font-family:Fraunces,Georgia,serif;font-size:19px;color:var(--navy);margin-bottom:6px}
+  .lsa .panel p,.lsa .panel li{font-size:15.5px;color:var(--ink)}
+  .lsa .panel ul{padding-left:20px}
+  .lsa .panel.focus{border-color:var(--amber);background:#fffaf0}
+  .lsa .choose-focus{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+  .lsa textarea{width:100%;min-height:110px;border:2px solid var(--line);border-radius:14px;padding:12px 14px;font:inherit;font-size:16px;margin-top:8px}
+  .lsa textarea:focus{outline:3px solid var(--amber);outline-offset:1px;border-color:var(--navy)}
+  .lsa .small{font-size:14px;color:var(--muted)}
+  @media(max-width:720px){.lsa-card{grid-template-columns:1fr;padding:24px 20px}.lsa{padding:22px 18px}.lsa .scores{grid-template-columns:1fr}.lsa legend{font-size:21px}.lsa .nav .btn{flex:1;justify-content:center}}
+  @media print{body *{visibility:hidden}#lsa-results,#lsa-results *{visibility:visible}#lsa-results{position:absolute;left:0;top:0;width:100%}#lsa-results .noprint{display:none!important}}
   .lead-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px;text-align:left}
   .lead-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 24px}
   .lead-card h3{font-size:20px;margin-bottom:8px}
@@ -287,14 +327,15 @@
   <div class="wrap">
     <div>
     <span class="eyebrow">Registered Manager Pathway · Care Recruitment</span>
-    <h1>Care Recruitment That Develops Leaders</h1>
-    <p class="lead">RMP Recruitment spots care staff with the makings of a good leader — then we <span class="place">recruit, develop and place</span> them. From support worker to Registered Manager, we grow the leaders care services need.</p>
+    <h1>Care recruitment with a path to leadership</h1>
+    <p class="lead">RMP Recruitment helps people find the right role in care and develop the skills to take their next step. We look for leadership potential early and help people build the experience to grow, from their first support worker role through to becoming a Registered Manager.</p>
+    <p class="lead" style="margin-top:14px">We help providers recruit for the roles they need today and develop the people who could lead their services tomorrow.</p>
     <div class="cta">
       <a href="#find-my-care-role" class="btn amber">Find my care role</a>
       <a href="#candidates" class="btn ghost">I'm looking for work</a>
       <a href="#providers" class="btn ghost">I need staff</a>
     </div>
-    <p class="trust">Children's homes · supported accommodation · adult social care. <b>More than an agency — a leadership pathway.</b></p>
+    <p class="trust">Children&rsquo;s homes · Supported accommodation · Adult social care</p>
     </div>
     <img class="hero-pic" src="images/site/hero-care-team.jpg" alt="A smiling team of care workers in a bright, homely lounge">
   </div>
@@ -421,12 +462,12 @@
           <legend>What role are you interested in?</legend>
           <p class="hint">Pick as many as you like.</p>
           <div class="opts">
-            <label class="opt"><input type="checkbox" name="role" value="Support worker"><span>Support worker</span></label>
-            <label class="opt"><input type="checkbox" name="role" value="Senior support worker"><span>Senior support worker</span></label>
-            <label class="opt"><input type="checkbox" name="role" value="Deputy manager"><span>Deputy manager</span></label>
-            <label class="opt"><input type="checkbox" name="role" value="Registered Manager"><span>Registered Manager</span></label>
-            <label class="opt"><input type="checkbox" name="role" value="Waking nights"><span>Waking nights</span></label>
-            <label class="opt"><input type="checkbox" name="role" value="Open to suggestions"><span>I'm open to suggestions</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="role" value="Support worker"><span>Support worker</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="role" value="Senior support worker"><span>Senior support worker</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="role" value="Deputy manager"><span>Deputy manager</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="role" value="Registered Manager"><span>Registered Manager</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="role" value="Waking nights"><span>Waking nights</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="role" value="Open to suggestions"><span>I'm open to suggestions</span></label>
           </div>
         </fieldset>
 
@@ -443,10 +484,10 @@
           <legend>Which settings interest you?</legend>
           <p class="hint">Not sure? That's fine, pick "Not sure yet".</p>
           <div class="opts">
-            <label class="opt"><input type="checkbox" name="setting" value="Adult supported living"><span>Adult supported living</span></label>
-            <label class="opt"><input type="checkbox" name="setting" value="Adult care homes"><span>Adult care homes</span></label>
-            <label class="opt"><input type="checkbox" name="setting" value="Children's residential care"><span>Children's residential care</span></label>
-            <label class="opt"><input type="checkbox" name="setting" value="Not sure yet"><span>Not sure yet</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="setting" value="Adult supported living"><span>Adult supported living</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="setting" value="Adult care homes"><span>Adult care homes</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="setting" value="Children's residential care"><span>Children's residential care</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="setting" value="Not sure yet"><span>Not sure yet</span></label>
           </div>
         </fieldset>
 
@@ -454,12 +495,12 @@
           <legend>What shifts work for you?</legend>
           <p class="hint">Pick all that apply.</p>
           <div class="opts">
-            <label class="opt"><input type="checkbox" name="shifts" value="Days"><span>Days</span></label>
-            <label class="opt"><input type="checkbox" name="shifts" value="Nights"><span>Nights</span></label>
-            <label class="opt"><input type="checkbox" name="shifts" value="Weekends"><span>Weekends</span></label>
-            <label class="opt"><input type="checkbox" name="shifts" value="Full-time"><span>Full-time</span></label>
-            <label class="opt"><input type="checkbox" name="shifts" value="Part-time"><span>Part-time</span></label>
-            <label class="opt"><input type="checkbox" name="shifts" value="Flexible / relief"><span>Flexible / relief</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="shifts" value="Days"><span>Days</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="shifts" value="Nights"><span>Nights</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="shifts" value="Weekends"><span>Weekends</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="shifts" value="Full-time"><span>Full-time</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="shifts" value="Part-time"><span>Part-time</span></label>
+            <label class="lsa-opt"><input type="checkbox" name="shifts" value="Flexible / relief"><span>Flexible / relief</span></label>
           </div>
         </fieldset>
 
@@ -467,10 +508,10 @@
           <legend>What experience do you have?</legend>
           <p class="hint">Everyone starts somewhere, and new starters are welcome.</p>
           <div class="opts">
-            <label class="opt"><input type="radio" name="experience" value="New to care"><span>New to care</span></label>
-            <label class="opt"><input type="radio" name="experience" value="Transferable experience"><span>Transferable experience</span></label>
-            <label class="opt"><input type="radio" name="experience" value="Care experience"><span>Care experience</span></label>
-            <label class="opt"><input type="radio" name="experience" value="Senior or management"><span>Senior or management</span></label>
+            <label class="lsa-opt"><input type="radio" name="experience" value="New to care"><span>New to care</span></label>
+            <label class="lsa-opt"><input type="radio" name="experience" value="Transferable experience"><span>Transferable experience</span></label>
+            <label class="lsa-opt"><input type="radio" name="experience" value="Care experience"><span>Care experience</span></label>
+            <label class="lsa-opt"><input type="radio" name="experience" value="Senior or management"><span>Senior or management</span></label>
           </div>
         </fieldset>
 
@@ -533,6 +574,15 @@
         </dl></details></div></div>
     </div>
     <div class="center" style="margin-top:30px"><a href="#find-my-care-role" class="btn amber">Help me choose</a></div>
+    <div class="lsa-card" id="leadership-self-assessment">
+      <div>
+        <div class="kicker" style="margin-bottom:8px">Leadership self-assessment</div>
+        <h3>How to Spot a Leader: Could It Be You?</h3>
+        <p>You don&rsquo;t need a management title or years in care to start developing as a leader. This short self-assessment helps you recognise the strengths you already bring and choose what to work on next.</p>
+      </div>
+      <button type="button" class="btn amber" id="lsa-start" aria-controls="lsa" aria-expanded="false">Start my leadership self-assessment</button>
+    </div>
+    <div class="lsa" id="lsa" hidden></div>
   </div>
 </section>
 
@@ -754,6 +804,99 @@
       err.textContent='Sorry, that didn\'t send. Please try again, or call us on 020 4618 0163.';
     });
   }
+})();
+</script>
+<script>
+/* Leadership self-assessment (Des, 11 Nov 2026). Answers stay in this browser only; nothing is sent anywhere. */
+(function(){
+var AREAS=[
+ {n:'Values and accountability',q:['I take responsibility for mistakes and explain what I’ll do differently.','I follow through on commitments or tell people early if I can’t.','I speak up respectfully when something doesn’t feel right, even if others stay quiet.','I ask what matters to the person affected before deciding what should happen.','I treat people with dignity and respect, including when I’m tired or under pressure.'],
+  a:'Next time something goes wrong, tell the person leading the shift what happened, what you learned and what you’ll do differently — before they ask.'},
+ {n:'Communication and trust',q:['I listen without interrupting and check I’ve understood the other person.','I adapt how I explain things when someone needs a different approach.','I give feedback privately and describe what could improve without making it personal.','I handle disagreements calmly and try to understand what’s behind them.','I share the key information someone needs to take over a task safely.'],
+  a:'At your next handover, summarise the key facts, the immediate priority and who owns the follow-up. Ask the person receiving it what you could make clearer.'},
+ {n:'Judgement and speaking up',q:['I can tell the difference between what I observed and what I assumed.','I ask for help early when a situation is beyond my experience or authority.','When priorities compete, I deal with the most urgent risk first.','If I raise a serious concern and it isn’t acted on, I follow up or escalate it.','When someone may be at risk, I speak to the right person promptly rather than waiting for proof.'],
+  a:'In your next written note or handover, keep what you saw and heard separate from what you think it means. Ask a senior colleague to check it with you.'},
+ {n:'Supporting and developing others',q:['I notice when someone is struggling and ask what support would help.','I show someone how to do a task and give them a chance to practise it.','I recognise other people’s contributions and share credit.','I set clear expectations and check that people understand what’s needed.','I invite input from people who might otherwise be overlooked.'],
+  a:'This week, show a newer colleague one task you’re confident in. Let them try it while you watch, then give one thing they did well and one tip.'},
+ {n:'Organisation and follow-through',q:['I turn a broad goal into practical actions with clear priorities.','When I agree an action with someone, I check who is doing it and by when.','I stay organised when plans change and explain what needs to happen next.','I check whether agreed actions were completed and made a difference.','I notice repeated problems and suggest ways to prevent them happening again.'],
+  a:'Pick one agreed action this week. Write down who is doing it and by when, then check back to see whether it was done and whether it made a difference.'},
+ {n:'Self-awareness and development',q:['I ask for specific feedback about how my actions affect others.','I can recognise when stress is affecting my tone or judgement.','I change my approach when feedback or evidence shows it isn’t working.','I can name a skill I need to improve and a practical way to practise it.','I can describe a time I helped a person or team achieve something and explain what I contributed.'],
+  a:'Ask one colleague or manager: “What’s one thing I could do differently that would help you?” Try it for a week, then ask again.'}
+];
+var SCALE=['I haven’t started developing this yet.','I’m beginning to do this.','I do this sometimes.','I usually do this.','I do this consistently, even under pressure.'];
+var Q=[];AREAS.forEach(function(ar,ai){ar.q.forEach(function(t){Q.push({t:t,a:ai});});});
+var KEY='rmp-leadership-sa-v1', box=document.getElementById('lsa'), startBtn=document.getElementById('lsa-start');
+if(!box||!startBtn)return;
+var st=load();
+function blank(){return {i:-1,ans:[],note:'',focus:null,done:false};}
+function load(){try{var v=JSON.parse(localStorage.getItem(KEY)||'null');if(v&&Array.isArray(v.ans))return v;}catch(e){}return blank();}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(st));}catch(e){}}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function answered(){return st.ans.filter(function(x){return x>=1&&x<=5;}).length;}
+if(answered()>0&&!st.done)startBtn.textContent='Continue my self-assessment ('+answered()+' of 30 answered)';
+if(st.done)startBtn.textContent='See my self-assessment results';
+startBtn.addEventListener('click',function(){
+  box.hidden=false;startBtn.setAttribute('aria-expanded','true');
+  if(st.done)results();else if(st.i<0)intro();else question(st.i);
+  box.scrollIntoView({behavior:'smooth',block:'start'});
+});
+function intro(){
+  box.innerHTML='<h3 tabindex="-1">Before you start</h3>'+
+  '<div class="note"><p>There are 30 short statements. For each one, choose how true it is of you today.</p><p style="margin-top:8px">You can draw on examples from <b>work, education, volunteering or everyday life</b>. If you&rsquo;ve never faced a situation, choose where you honestly think you are today.</p><p style="margin-top:8px">This is a development exercise. There is no pass mark and no hiring decision attached. Your answers stay on this device and are never sent to us.</p></div>'+
+  '<div class="nav"><span></span><button type="button" class="btn amber" id="lsa-go">Start question 1</button></div>';
+  focusHead();
+  box.querySelector('#lsa-go').onclick=function(){st.i=0;save();question(0);};
+}
+function question(i){
+  st.i=i;save();var q=Q[i],cur=st.ans[i]||0;
+  var h='<div class="meta"><span>Question '+(i+1)+' of 30</span><span>'+answered()+' answered</span></div>'+
+  '<div class="bar" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="30" aria-valuenow="'+(i+1)+'"><span style="width:'+((i+1)/30*100)+'%"></span></div>'+
+  '<div class="prompt">How true is this of you?</div><fieldset><legend tabindex="-1">'+esc(q.t)+'</legend><div class="area">'+esc(AREAS[q.a].n)+'</div><div class="opts">';
+  SCALE.forEach(function(lbl,k){var v=k+1;h+='<label class="lsa-opt"><input type="radio" name="lsa-q" value="'+v+'"'+(cur===v?' checked':'')+'><span><b>'+v+'.</b>'+esc(lbl)+'</span></label>';});
+  h+='</div></fieldset><p class="err" id="lsa-err" role="alert"></p><div class="nav">'+
+  '<button type="button" class="btn light" id="lsa-back">&larr; Back</button>'+
+  '<button type="button" class="btn amber" id="lsa-next">'+(i===29?'See my results':'Next &rarr;')+'</button></div>';
+  box.innerHTML=h;
+  var lg=box.querySelector('legend');try{lg.focus({preventScroll:true});}catch(e){lg.focus();}
+  box.querySelectorAll('input[name=lsa-q]').forEach(function(r){r.onchange=function(){st.ans[i]=+r.value;save();box.querySelector('.meta span:last-child').textContent=answered()+' answered';box.querySelector('#lsa-err').textContent='';};});
+  box.querySelector('#lsa-back').onclick=function(){if(i===0){st.i=-1;save();intro();}else question(i-1);};
+  box.querySelector('#lsa-next').onclick=function(){
+    if(!(st.ans[i]>=1)){box.querySelector('#lsa-err').textContent='Please choose an answer to continue.';return;}
+    if(i<29){question(i+1);return;}
+    var miss=-1;for(var k=0;k<30;k++){if(!(st.ans[k]>=1)){miss=k;break;}}
+    if(miss>=0){question(miss);box.querySelector('#lsa-err').textContent='Please answer this question before seeing your results.';return;}
+    st.done=true;save();results();box.scrollIntoView({behavior:'smooth',block:'start'});
+  };
+}
+function scores(){return AREAS.map(function(ar,ai){var t=0;for(var k=ai*5;k<ai*5+5;k++)t+=st.ans[k]||0;return {ai:ai,n:ar.n,s:t};});}
+function results(){
+  var sc=scores(),sorted=sc.slice().sort(function(a,b){return b.s-a.s;});
+  var top=sorted.filter(function(x){return x.s>=sorted[1].s;});
+  var min=sorted[sorted.length-1].s,low=sc.filter(function(x){return x.s===min;});
+  var fixedLow=low.length===1?low[0].ai:(low.some(function(x){return x.ai===st.focus;})?st.focus:null);
+  var h='<div id="lsa-results"><h3 tabindex="-1">Your leadership self-assessment</h3><p class="small">Your scores are based on how you rated yourself. They stay on this device.</p>';
+  h+='<div class="scores">';sc.forEach(function(x){h+='<div class="sc"><div class="row"><span>'+esc(x.n)+'</span><span>'+x.s+' / 25</span></div><div class="bar"><span style="width:'+(x.s/25*100)+'%"></span></div></div>';});h+='</div>';
+  h+='<div class="panel"><h4>'+(top.length>2?'Your strongest self-rated areas (tied)':'Your two strongest self-rated areas')+'</h4><ul>';
+  top.forEach(function(x){h+='<li>'+esc(x.n)+' &mdash; '+x.s+' / 25</li>';});
+  h+='</ul>'+(top.length>2?'<p class="small" style="margin-top:6px">Some areas scored the same, so they are all shown.</p>':'')+'</div>';
+  h+='<div class="panel focus"><h4>One area to develop next</h4>';
+  if(low.length>1){
+    h+='<p>'+low.length+' areas are tied on '+min+' / 25. Choose the one you want to focus on:</p><div class="choose-focus noprint">';
+    low.forEach(function(x){h+='<button type="button" class="btn light" data-f="'+x.ai+'" aria-pressed="'+(fixedLow===x.ai)+'">'+esc(x.n)+'</button>';});h+='</div>';
+  }
+  if(fixedLow!==null){h+='<p style="margin-top:10px"><b>'+esc(AREAS[fixedLow].n)+'</b> ('+min+' / 25)</p><p style="margin-top:6px"><b>Try this:</b> '+esc(AREAS[fixedLow].a)+'</p>';}
+  h+='</div>';
+  h+='<div class="panel"><h4>One reflection</h4><p>What&rsquo;s a real example that backs up one of your strengths?</p><label for="lsa-note" class="small" style="display:block;margin-top:8px">Optional. Your notes stay on this device and print with your results.</label><textarea id="lsa-note">'+esc(st.note||'')+'</textarea></div>';
+  h+='<div class="nav noprint"><button type="button" class="btn light" id="lsa-change">&larr; Change my answers</button><span style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" class="btn light" id="lsa-print">Print or save my results</button><a href="#enquire" class="btn amber">Talk to us about developing in care leadership</a></span></div>';
+  h+='<p class="noprint" style="margin-top:16px"><button type="button" class="btn light" id="lsa-restart">Start again</button></p></div>';
+  box.innerHTML=h;focusHead();
+  box.querySelectorAll('[data-f]').forEach(function(b){b.onclick=function(){st.focus=+b.getAttribute('data-f');save();results();var t=box.querySelector('.panel.focus');if(t)t.scrollIntoView({block:'nearest'});};});
+  box.querySelector('#lsa-note').oninput=function(e){st.note=e.target.value;save();};
+  box.querySelector('#lsa-print').onclick=function(){window.print();};
+  box.querySelector('#lsa-change').onclick=function(){st.done=false;save();question(0);};
+  box.querySelector('#lsa-restart').onclick=function(){st=blank();save();startBtn.textContent='Start my leadership self-assessment';intro();};
+}
+function focusHead(){var t=box.querySelector('h3');if(t){try{t.focus({preventScroll:true});}catch(e){t.focus();}}}
 })();
 </script>
 </body>
