@@ -66,6 +66,25 @@
   .pillar p{font-size:15.5px;color:var(--muted)}
 
   section.block{padding:74px 0}
+  .cp-wide{grid-template-columns:1fr !important;max-width:900px;margin:34px auto 0}
+  .pw{margin-top:38px;position:relative}
+  .pw-track{position:absolute;left:10%;right:10%;top:-14px;height:4px;background:#f1dcc7;border-radius:4px}
+  .pw-fill{display:block;height:100%;width:0;background:#e8711f;border-radius:4px;transition:width .45s ease}
+  .pw-stages{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  .pw-stage{all:unset;box-sizing:border-box;cursor:pointer;background:#fff;border:2px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;position:relative;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+  .pw-stage:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(19,41,74,.14)}
+  .pw-stage:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+  .pw-stage.on{border-color:#e8711f;box-shadow:0 16px 40px rgba(232,113,31,.22);transform:translateY(-4px)}
+  .pw-pic{display:block;aspect-ratio:4/3;overflow:hidden;background:#eee}
+  .pw-pic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+  .pw-stage:hover .pw-pic img,.pw-stage.on .pw-pic img{transform:scale(1.05)}
+  .pw-num{position:absolute;top:10px;left:10px;width:40px;height:40px;border-radius:50%;background:#e8711f;color:#fff;font-weight:800;font-size:19px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+  .pw-name{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:20px;color:var(--navy);line-height:1.2;padding:14px 16px 4px}
+  .pw-line{font-size:15px;color:var(--muted);line-height:1.45;padding:0 16px 16px}
+  .pw-hint{text-align:center;color:var(--muted);font-size:15px;margin:18px 0 0}
+  .pw-swipe{display:none}
+  @media(max-width:900px){.pw-swipe{display:inline}}
+  @media(max-width:900px){.pw-track{display:none}.pw-stages{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding:6px 2px 14px;margin:0 -24px;padding-left:24px;padding-right:24px}.pw-stage{flex:0 0 72%;scroll-snap-align:center}}
   .lead-fold{max-width:1000px;margin:22px auto 0;background:#fff;border:1px solid var(--line);border-radius:16px;text-align:left}
   .lead-fold summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:22px 26px;font-family:Fraunces,serif;font-size:24px;color:var(--navy)}
   .lead-fold summary::-webkit-details-marker{display:none}
@@ -478,21 +497,31 @@
       <h2>From job seeker to Registered Manager</h2>
       <p class="sec-lead">Build experience, seek feedback and check the requirements for each role.</p>
     </div>
-    <div class="cp-grid">
-      <img class="cp-img" src="images/site/rmp-career-pathway.jpg?v=3" alt="RMP Recruitment career pathway: 1 Job seeker, 2 Support Worker, 3 Senior Support Worker, 4 Deputy Manager, 5 Registered Manager" loading="lazy">
+    <div class="pw" role="group" aria-label="Career pathway stages">
+      <div class="pw-track" aria-hidden="true"><span class="pw-fill"></span></div>
+      <div class="pw-stages">
+        <button type="button" class="pw-stage" data-stage="1" aria-controls="cp-step-1"><span class="pw-pic"><img src="images/site/path-1.jpg" alt="A job seeker looking at care vacancies on her laptop at home" loading="lazy"></span><span class="pw-num">1</span><span class="pw-name">Job seeker</span><span class="pw-line">Apply and prepare for interview.</span></button>
+        <button type="button" class="pw-stage" data-stage="2" aria-controls="cp-step-2"><span class="pw-pic"><img src="images/site/path-2.jpg" alt="A support worker doing a jigsaw with a young person" loading="lazy"></span><span class="pw-num">2</span><span class="pw-name">Support Worker</span><span class="pw-line">Build trust and follow care plans.</span></button>
+        <button type="button" class="pw-stage" data-stage="3" aria-controls="cp-step-3"><span class="pw-pic"><img src="images/site/path-3.jpg" alt="A senior support worker leading a shift handover in the kitchen" loading="lazy"></span><span class="pw-num">3</span><span class="pw-name">Senior Support Worker</span><span class="pw-line">Lead shifts and guide colleagues.</span></button>
+        <button type="button" class="pw-stage" data-stage="4" aria-controls="cp-step-4"><span class="pw-pic"><img src="images/site/path-4.jpg" alt="A deputy manager in a supervision conversation" loading="lazy"></span><span class="pw-num">4</span><span class="pw-name">Deputy Manager</span><span class="pw-line">Supervise staff and review incidents.</span></button>
+        <button type="button" class="pw-stage" data-stage="5" aria-controls="cp-step-4"><span class="pw-pic"><img src="images/site/path-5.jpg" alt="A Registered Manager leading a team meeting" loading="lazy"></span><span class="pw-num">5</span><span class="pw-name">Registered Manager</span><span class="pw-line">Lead the home and improve care.</span></button>
+      </div>
+      <p class="pw-hint"><span class="pw-swipe">Swipe to see all 5 stages. </span>Tap a stage to see how to reach the next one.</p>
+    </div>
+    <div class="cp-grid cp-wide">
       <div class="cp-steps">
         <p class="cp-intro">It starts in your own bedroom, looking at care vacancies and wondering where you might fit. Over time, the responsibility changes: first you learn to support children well, then you learn to lead a shift, develop a team and oversee the care provided by the whole home.</p>
         <p class="cp-intro">The flow chart shows one possible route through children&rsquo;s residential care in England. Use each stage to work out <b>what to learn, what responsibility to ask for and what evidence will show you&rsquo;re ready for the next step.</b></p>
-        <details class="cp-step"><summary><span class="cp-num">1</span><span class="cp-t">Job seeker &rarr; Support Worker: Show what you bring</span></summary><div class="cp-body"><p>Read the job description and find out who the home supports. Think about the everyday work: helping children with routines, building relationships, working shifts and staying calm when plans change. Ask what induction and support you&rsquo;ll receive, especially if this is your first role in care.</p>
+        <details class="cp-step" id="cp-step-1"><summary><span class="cp-num">1</span><span class="cp-t">Job seeker &rarr; Support Worker: Show what you bring</span></summary><div class="cp-body"><p>Read the job description and find out who the home supports. Think about the everyday work: helping children with routines, building relationships, working shifts and staying calm when plans change. Ask what induction and support you&rsquo;ll receive, especially if this is your first role in care.</p>
 <p>You can draw on experience from work, volunteering, education or everyday life. Prepare examples that show how you listened to someone, kept a commitment, handled a disagreement or asked for help when something was beyond your experience. At interview, explain <b>what you noticed, what you did and what you learned</b>. Complete the application carefully, explain any gaps in your employment history and respond promptly to requests for recruitment checks.</p>
 <p class="cp-ready"><b>What readiness looks like:</b> You can explain why you want to work with children, give examples of how you build trust and show that you&rsquo;re willing to learn. If you don&rsquo;t know how to handle a situation, you can explain how you&rsquo;d get help.</p></div></details>
-        <details class="cp-step"><summary><span class="cp-num">2</span><span class="cp-t">Support Worker &rarr; Senior Support Worker: Become someone others can rely on</span></summary><div class="cp-body"><p>Start with the quality of your own practice. Learn how each child communicates, what helps them feel safe and what their plans ask you to do. Record clearly, raise concerns promptly and follow through on agreed actions. Use supervision to discuss what went well and what you&rsquo;d do differently. If you don&rsquo;t already hold the relevant Level 3 qualification, agree a plan with your employer. For staff in a care role, Regulation 32 normally requires the Level 3 Diploma for Residential Childcare (England), or an equivalent qualification, within two years of starting a care role in a home, subject to the permitted deferrals (<a href="https://www.legislation.gov.uk/uksi/2015/541/regulation/32" target="_blank" rel="noopener">Children&rsquo;s Homes (England) Regulations 2015, reg 32</a>).</p>
+        <details class="cp-step" id="cp-step-2"><summary><span class="cp-num">2</span><span class="cp-t">Support Worker &rarr; Senior Support Worker: Become someone others can rely on</span></summary><div class="cp-body"><p>Start with the quality of your own practice. Learn how each child communicates, what helps them feel safe and what their plans ask you to do. Record clearly, raise concerns promptly and follow through on agreed actions. Use supervision to discuss what went well and what you&rsquo;d do differently. If you don&rsquo;t already hold the relevant Level 3 qualification, agree a plan with your employer. For staff in a care role, Regulation 32 normally requires the Level 3 Diploma for Residential Childcare (England), or an equivalent qualification, within two years of starting a care role in a home, subject to the permitted deferrals (<a href="https://www.legislation.gov.uk/uksi/2015/541/regulation/32" target="_blank" rel="noopener">Children&rsquo;s Homes (England) Regulations 2015, reg 32</a>).</p>
 <p><b>What to ask for:</b> Lead part of a handover with an experienced colleague alongside you. Practise explaining the priorities, who will follow up and what the next shift needs to know. Then ask for specific feedback. As you gain confidence, help a new colleague learn an agreed routine and check they understand why it matters.</p>
 <p class="cp-ready"><b>What readiness looks like:</b> You can give an example of keeping care consistent across shifts, helping a colleague improve their practice or spotting a concern and following it through. You can do this on a difficult shift as well as on a straightforward one.</p></div></details>
-        <details class="cp-step"><summary><span class="cp-num">3</span><span class="cp-t">Senior Support Worker &rarr; Deputy Manager: Move from running a shift to improving the home</span></summary><div class="cp-body"><p>As a senior, you coordinate the shift in front of you. As a deputy, you also need to spot patterns across shifts and help the team improve. Build experience in staff supervision, induction, rota planning, incident review and checking the quality of records and care plans. Ask your manager to agree which decisions you can make and which you should escalate.</p>
+        <details class="cp-step" id="cp-step-3"><summary><span class="cp-num">3</span><span class="cp-t">Senior Support Worker &rarr; Deputy Manager: Move from running a shift to improving the home</span></summary><div class="cp-body"><p>As a senior, you coordinate the shift in front of you. As a deputy, you also need to spot patterns across shifts and help the team improve. Build experience in staff supervision, induction, rota planning, incident review and checking the quality of records and care plans. Ask your manager to agree which decisions you can make and which you should escalate.</p>
 <p><b>What to ask for:</b> Take responsibility for one defined improvement. For example, if important actions are repeatedly missed at handover, review a sample of records, speak with the team and agree a simple change. Check a few weeks later whether actions are now being completed and what difference that made for children.</p>
 <p class="cp-ready"><b>What readiness looks like:</b> You can explain a problem you identified, how you involved staff, what you changed and how you checked it worked. You can also give an example of addressing poor practice fairly, setting clear expectations and following up.</p></div></details>
-        <details class="cp-step"><summary><span class="cp-num">4</span><span class="cp-t">Deputy Manager &rarr; Registered Manager: Show you can lead the whole service</span></summary><div class="cp-body"><p>Build experience beyond covering for the manager. Get involved in safer recruitment, placement matching, safeguarding oversight, workforce planning and quality assurance. Work with the manager and Responsible Individual to understand how the home knows children are safe, making progress and being heard. Be ready to discuss what you would do when those checks show something is going wrong.</p>
+        <details class="cp-step" id="cp-step-4"><summary><span class="cp-num">4</span><span class="cp-t">Deputy Manager &rarr; Registered Manager: Show you can lead the whole service</span></summary><div class="cp-body"><p>Build experience beyond covering for the manager. Get involved in safer recruitment, placement matching, safeguarding oversight, workforce planning and quality assurance. Work with the manager and Responsible Individual to understand how the home knows children are safe, making progress and being heard. Be ready to discuss what you would do when those checks show something is going wrong.</p>
 <p><b>What to ask for:</b> Lead a review with an agreed scope. Bring together children&rsquo;s feedback, staff observations and records. Identify what needs to change, assign responsibilities and check whether the changes improved children&rsquo;s experience. Use examples like this to prepare for the role and the Ofsted application.</p>
 <p class="cp-ready"><b>Check the requirements early.</b> Under <a href="https://www.legislation.gov.uk/uksi/2015/541/regulation/28" target="_blank" rel="noopener">Regulation 28</a>, you need at least two years&rsquo; experience in a role relevant to the residential care of children within the previous five years, and at least one year in a role requiring you to supervise and manage staff working in care roles. Check your actual duties and dates against those requirements. The Level 5 Diploma in Leadership and Management for Residential Childcare (England), or a qualification the registered provider considers equivalent, must normally be gained within three years of starting to manage a home, subject to permitted deferral. The proposed manager must also apply to Ofsted through the <a href="https://www.gov.uk/government/publications/register-a-childrens-home/apply-to-be-associated-with-a-childrens-home" target="_blank" rel="noopener">SC2 process</a>.</p></div></details>
         <div class="cp-next">
@@ -1089,6 +1118,14 @@ function results(){
 }
 function focusHead(){var t=box.querySelector('h3');if(t){try{t.focus({preventScroll:true});}catch(e){t.focus();}}}
 })();
+</script>
+<script>
+(function(){var st=document.querySelectorAll('.pw-stage'),fill=document.querySelector('.pw-fill');if(!st.length)return;
+function mark(n){st.forEach(function(b){var on=+b.dataset.stage===n;b.classList.toggle('on',on);b.setAttribute('aria-pressed',on?'true':'false');});if(fill)fill.style.width=n?((n-1)/4*100)+'%':'0';}
+st.forEach(function(b){b.addEventListener('click',function(){var n=+b.dataset.stage,d=document.getElementById('cp-step-'+Math.min(n,4));mark(n);
+document.querySelectorAll('details.cp-step').forEach(function(x){if(x!==d)x.open=false;});if(d){d.open=true;setTimeout(function(){d.scrollIntoView({behavior:'smooth',block:'nearest'});},60);}});});
+document.querySelectorAll('details.cp-step').forEach(function(d,i){d.addEventListener('toggle',function(){if(d.open)mark(i+1);});});
+mark(0);})();
 </script>
 </body>
 </html>
