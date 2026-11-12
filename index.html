@@ -66,6 +66,13 @@
   .pillar p{font-size:15.5px;color:var(--muted)}
 
   section.block{padding:74px 0}
+  .lead-fold{max-width:1000px;margin:22px auto 0;background:#fff;border:1px solid var(--line);border-radius:16px;text-align:left}
+  .lead-fold summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:22px 26px;font-family:Fraunces,serif;font-size:24px;color:var(--navy)}
+  .lead-fold summary::-webkit-details-marker{display:none}
+  .lead-fold summary::after{content:"+";color:var(--teal);font-size:28px;line-height:1}
+  .lead-fold[open] summary::after{content:"\2013"}
+  .lead-fold .lead-grid{margin:0;padding:4px 22px 24px}
+  .lead-fold .lead-card{background:var(--cream,#fbf7ef)}
   .pp-sec{background:#fff}
   .pp-wrap{max-width:780px}
   .pp-wrap h2{font-size:clamp(30px,3.4vw,44px);color:var(--navy);margin:8px 0 22px;line-height:1.1}
@@ -476,7 +483,7 @@
       <div class="cp-steps">
         <p class="cp-intro">It starts in your own bedroom, looking at care vacancies and wondering where you might fit. Over time, the responsibility changes: first you learn to support children well, then you learn to lead a shift, develop a team and oversee the care provided by the whole home.</p>
         <p class="cp-intro">The flow chart shows one possible route through children&rsquo;s residential care in England. Use each stage to work out <b>what to learn, what responsibility to ask for and what evidence will show you&rsquo;re ready for the next step.</b></p>
-        <details class="cp-step" open><summary><span class="cp-num">1</span><span class="cp-t">Job seeker &rarr; Support Worker: Show what you bring</span></summary><div class="cp-body"><p>Read the job description and find out who the home supports. Think about the everyday work: helping children with routines, building relationships, working shifts and staying calm when plans change. Ask what induction and support you&rsquo;ll receive, especially if this is your first role in care.</p>
+        <details class="cp-step"><summary><span class="cp-num">1</span><span class="cp-t">Job seeker &rarr; Support Worker: Show what you bring</span></summary><div class="cp-body"><p>Read the job description and find out who the home supports. Think about the everyday work: helping children with routines, building relationships, working shifts and staying calm when plans change. Ask what induction and support you&rsquo;ll receive, especially if this is your first role in care.</p>
 <p>You can draw on experience from work, volunteering, education or everyday life. Prepare examples that show how you listened to someone, kept a commitment, handled a disagreement or asked for help when something was beyond your experience. At interview, explain <b>what you noticed, what you did and what you learned</b>. Complete the application carefully, explain any gaps in your employment history and respond promptly to requests for recruitment checks.</p>
 <p class="cp-ready"><b>What readiness looks like:</b> You can explain why you want to work with children, give examples of how you build trust and show that you&rsquo;re willing to learn. If you don&rsquo;t know how to handle a situation, you can explain how you&rsquo;d get help.</p></div></details>
         <details class="cp-step"><summary><span class="cp-num">2</span><span class="cp-t">Support Worker &rarr; Senior Support Worker: Become someone others can rely on</span></summary><div class="cp-body"><p>Start with the quality of your own practice. Learn how each child communicates, what helps them feel safe and what their plans ask you to do. Record clearly, raise concerns promptly and follow through on agreed actions. Use supervision to discuss what went well and what you&rsquo;d do differently. If you don&rsquo;t already hold the relevant Level 3 qualification, agree a plan with your employer. For staff in a care role, Regulation 32 normally requires the Level 3 Diploma for Residential Childcare (England), or an equivalent qualification, within two years of starting a care role in a home, subject to the permitted deferrals (<a href="https://www.legislation.gov.uk/uksi/2015/541/regulation/32" target="_blank" rel="noopener">Children&rsquo;s Homes (England) Regulations 2015, reg 32</a>).</p>
@@ -534,7 +541,7 @@
     <div class="kicker">Developing leaders</div>
     <h2>Spotting Tomorrow's Care Leaders</h2>
     <p class="sec-lead">Great Registered Managers rarely start out as managers. They start as support workers who show the right qualities early. We look for those qualities, recognise them and help people build on them.</p>
-    <h3 class="lead-sub">What makes a good leader in care</h3>
+    <details class="lead-fold"><summary>What makes a good leader in care</summary>
     <div class="lead-grid">
       <div class="lead-card"><h3>Puts people first</h3><p>Every decision starts with the person being supported — not the rota, not the paperwork.</p></div>
       <div class="lead-card"><h3>Stays calm under pressure</h3><p>When a shift gets hard, they stay steady. That keeps the team steady and the people they support safe.</p></div>
@@ -542,8 +549,8 @@
       <div class="lead-card"><h3>Lifts the team</h3><p>They notice who is struggling, share what they know and give credit where it is due.</p></div>
       <div class="lead-card"><h3>Communicates clearly</h3><p>They explain things simply to staff, families, social workers and inspectors — and they listen.</p></div>
       <div class="lead-card"><h3>Sets the standard</h3><p>They do the right thing when no one is watching, and others follow their lead.</p></div>
-    </div>
-    <h3 class="lead-sub">How we spot it in up-and-coming staff</h3>
+    </div></details>
+    <details class="lead-fold"><summary>How we spot it in up-and-coming staff</summary>
     <div class="lead-grid">
       <div class="lead-card"><h3>Colleagues go to them first</h3><p>When someone is unsure, they ask this person. That trust is the first sign of a leader.</p></div>
       <div class="lead-card"><h3>They ask why</h3><p>They want to understand the reasons behind a care plan or policy, not just follow it.</p></div>
@@ -551,7 +558,7 @@
       <div class="lead-card"><h3>Their records are clear</h3><p>Accurate, timely notes show the care and organisation good leaders need.</p></div>
       <div class="lead-card"><h3>They raise concerns</h3><p>Even when it is uncomfortable, they speak up for the people they support.</p></div>
       <div class="lead-card"><h3>They act on feedback</h3><p>They take advice well and you can see them improve.</p></div>
-    </div>
+    </div></details>
     <p class="sec-lead" style="margin-top:40px">Once we spot that potential, we build on it with leadership training, mentoring and a clear path from support worker to senior, deputy and Registered Manager.</p>
   </div>
 </section>
