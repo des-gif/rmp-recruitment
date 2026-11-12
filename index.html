@@ -66,6 +66,16 @@
   .pillar p{font-size:15.5px;color:var(--muted)}
 
   section.block{padding:74px 0}
+  .lsa-modal{position:fixed;inset:0;z-index:9999;background:rgba(9,18,38,.62);overflow-y:auto;padding:40px 16px;display:flex;justify-content:center;align-items:flex-start}
+  .lsa-modal[hidden]{display:none}
+  .lsa-modal-inner{position:relative;width:100%;max-width:820px}
+  .lsa-modal .lsa{margin:0;padding-top:66px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+  .lsa-close{position:absolute;top:12px;right:12px;z-index:2;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--navy);font-size:26px;line-height:1;cursor:pointer}
+  .lsa-close:hover{background:var(--cream)}
+  .lsa-close:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+  body.lsa-open{overflow:hidden}
+  @media(max-width:720px){.lsa-modal{padding:12px 8px}}
+  @media print{.lsa-modal{position:static;background:none;padding:0}.lsa-close{display:none}}
   .rmi-card{margin-top:40px;background:var(--cream);border:1px solid var(--line);border-radius:20px;padding:28px 30px;display:grid;grid-template-columns:1fr auto;gap:16px 28px;align-items:center}
   .rmi-card h3{font-size:25px;color:var(--navy);margin-bottom:8px}
   .rmi-card p{color:var(--muted);font-size:16px;max-width:680px}
@@ -87,7 +97,6 @@
   .lb-strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);padding-top:28px;padding-bottom:28px}
   .lb-strip span{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(19px,2vw,28px);color:var(--navy);text-align:center;padding:4px 10px}
   .lb-strip span+span{border-left:1px solid #d8c9a8}
-  .lb-sec .lsa{margin:28px 0 40px}
   @media(max-width:900px){.lb{display:block;min-height:0}.lb-pic{position:relative;width:100%;height:300px}.lb-panel{width:100%;clip-path:none}.lb-in{padding:34px 24px 38px}.lb-strip .wrap{grid-template-columns:1fr;gap:6px;padding-top:18px;padding-bottom:18px}.lb-strip span+span{border-left:0;border-top:1px solid #e3d8bf;padding-top:10px}.lb-btn{width:100%;justify-content:center}}
   /* Leadership self-assessment (Des, 11 Nov 2026) */
   .lsa-card{margin-top:34px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 30px 28px;display:grid;grid-template-columns:1fr auto;gap:18px 28px;align-items:center}
@@ -383,7 +392,6 @@
     </div>
   </div>
   <div class="lb-strip"><div class="wrap"><span>Spot your strengths</span><span>Choose a next step</span><span>Build your confidence</span></div></div>
-  <div class="wrap"><div class="lsa" id="lsa" hidden></div></div>
 </section>
 
 <section class="paths">
@@ -850,6 +858,12 @@
   }
 })();
 </script>
+<div class="lsa-modal" id="lsa-modal" hidden>
+  <div class="lsa-modal-inner" role="dialog" aria-modal="true" aria-label="Leadership self-assessment">
+    <button type="button" class="lsa-close" id="lsa-close" aria-label="Close the self-assessment">&times;</button>
+    <div class="lsa" id="lsa"></div>
+  </div>
+</div>
 <script>
 /* Leadership self-assessment (Des, 11 Nov 2026). Answers stay in this browser only; nothing is sent anywhere. */
 (function(){
@@ -879,11 +893,18 @@ function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp
 function answered(){return st.ans.filter(function(x){return x>=1&&x<=5;}).length;}
 if(answered()>0&&!st.done)startBtn.textContent='Continue my self-assessment ('+answered()+' of 30 answered)';
 if(st.done)startBtn.textContent='See my self-assessment results';
-startBtn.addEventListener('click',function(){
-  box.hidden=false;startBtn.setAttribute('aria-expanded','true');
-  if(st.done)results();else if(st.i<0)intro();else question(st.i);
-  box.scrollIntoView({behavior:'smooth',block:'start'});
-});
+var modal=document.getElementById('lsa-modal'),closeBtn=document.getElementById('lsa-close');
+function toTop(){try{modal.scrollTop=0;}catch(e){}}
+function openModal(){modal.hidden=false;document.body.classList.add('lsa-open');startBtn.setAttribute('aria-expanded','true');
+  if(st.done)results();else if(st.i<0)intro();else question(st.i);toTop();}
+function closeModal(){modal.hidden=true;document.body.classList.remove('lsa-open');startBtn.setAttribute('aria-expanded','false');
+  if(answered()>0&&!st.done)startBtn.textContent='Continue my self-assessment ('+answered()+' of 30 answered)';
+  else if(st.done)startBtn.textContent='See my self-assessment results';
+  startBtn.focus();}
+startBtn.addEventListener('click',openModal);
+closeBtn.addEventListener('click',closeModal);
+modal.addEventListener('click',function(e){if(e.target===modal)closeModal();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)closeModal();});
 function intro(){
   box.innerHTML='<h3 tabindex="-1">Before you start</h3>'+
   '<div class="note"><p>There are 30 short statements. For each one, choose how true it is of you today.</p><p style="margin-top:8px">You can draw on examples from <b>work, education, volunteering or everyday life</b>. If you&rsquo;ve never faced a situation, choose where you honestly think you are today.</p><p style="margin-top:8px">This is a development exercise. There is no pass mark and no hiring decision attached. Your answers stay on this device and are never sent to us.</p></div>'+
@@ -892,7 +913,7 @@ function intro(){
   box.querySelector('#lsa-go').onclick=function(){st.i=0;save();question(0);};
 }
 function question(i){
-  st.i=i;save();var q=Q[i],cur=st.ans[i]||0;
+  st.i=i;save();toTop();var q=Q[i],cur=st.ans[i]||0;
   var h='<div class="meta"><span>Question '+(i+1)+' of 30</span><span>'+answered()+' answered</span></div>'+
   '<div class="bar" role="progressbar" aria-label="Progress" aria-valuemin="0" aria-valuemax="30" aria-valuenow="'+(i+1)+'"><span style="width:'+((i+1)/30*100)+'%"></span></div>'+
   '<div class="prompt">How true is this of you?</div><fieldset><legend tabindex="-1">'+esc(q.t)+'</legend><div class="area">'+esc(AREAS[q.a].n)+'</div><div class="opts">';
@@ -909,7 +930,7 @@ function question(i){
     if(i<29){question(i+1);return;}
     var miss=-1;for(var k=0;k<30;k++){if(!(st.ans[k]>=1)){miss=k;break;}}
     if(miss>=0){question(miss);box.querySelector('#lsa-err').textContent='Please answer this question before seeing your results.';return;}
-    st.done=true;save();results();box.scrollIntoView({behavior:'smooth',block:'start'});
+    st.done=true;save();results();toTop();
   };
 }
 function scores(){return AREAS.map(function(ar,ai){var t=0;for(var k=ai*5;k<ai*5+5;k++)t+=st.ans[k]||0;return {ai:ai,n:ar.n,s:t};});}
@@ -938,6 +959,7 @@ function results(){
   box.querySelector('#lsa-note').oninput=function(e){st.note=e.target.value;save();};
   box.querySelector('#lsa-print').onclick=function(){window.print();};
   box.querySelector('#lsa-change').onclick=function(){st.done=false;save();question(0);};
+  var tl=box.querySelector('a[href="#enquire"]');if(tl)tl.addEventListener('click',function(){closeModal();});
   box.querySelector('#lsa-restart').onclick=function(){st=blank();save();startBtn.textContent='Start my leadership self-assessment';intro();};
 }
 function focusHead(){var t=box.querySelector('h3');if(t){try{t.focus({preventScroll:true});}catch(e){t.focus();}}}
