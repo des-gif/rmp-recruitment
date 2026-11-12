@@ -66,6 +66,24 @@
   .pillar p{font-size:15.5px;color:var(--muted)}
 
   section.block{padding:74px 0}
+  .cp-intro{font-size:17px;color:var(--ink);line-height:1.7;margin-bottom:14px}
+  details.cp-step{display:block;padding:0;margin-bottom:12px}
+  details.cp-step summary{list-style:none;display:grid;grid-template-columns:44px 1fr 20px;gap:16px;align-items:center;padding:18px 22px;cursor:pointer}
+  details.cp-step summary::-webkit-details-marker{display:none}
+  details.cp-step summary::after{content:"+";font-size:24px;color:var(--navy);font-weight:600;text-align:center}
+  details.cp-step[open] summary::after{content:"\2212"}
+  details.cp-step summary:focus-visible{outline:3px solid var(--amber);outline-offset:-3px;border-radius:16px}
+  .cp-t{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:19px;color:var(--navy);line-height:1.3}
+  .cp-body{padding:0 22px 20px 82px}
+  .cp-step .cp-body p{font-size:16px;color:var(--ink);line-height:1.7;margin:0 0 14px}
+  .cp-body a,.cp-next a{color:var(--teal);text-decoration:underline}
+  .cp-ready{background:var(--cream);border-radius:12px;padding:12px 14px}
+  .cp-next{background:var(--navy);color:#fff;border-radius:16px;padding:22px 24px;margin-top:18px}
+  .cp-next h3{color:#fff;font-size:21px;margin-bottom:10px}
+  .cp-next p{color:#e6ebf3;font-size:16px;line-height:1.7;margin:0 0 10px}
+  .cp-steps .cp-head{display:none}
+  @media(min-width:901px){.cp-img{position:sticky;top:90px}}
+  @media(max-width:900px){details.cp-step summary{grid-template-columns:38px 1fr 18px;gap:12px;padding:16px}.cp-body{padding:0 16px 16px}.cp-t{font-size:17px}}
   .cp-sec{padding:70px 0;background:var(--cream)}
   .cp-grid{display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:48px;align-items:start;margin-top:36px}
   .cp-img{width:100%;height:auto;border-radius:18px;box-shadow:0 14px 40px rgba(15,23,42,.16);display:block}
@@ -437,16 +455,30 @@
     <div class="center">
       <div class="kicker">Your career pathway</div>
       <h2>From job seeker to Registered Manager</h2>
-      <p class="sec-lead">Build experience, seek feedback and check the requirements for each role. Here is what to do to move up at each step.</p>
+      <p class="sec-lead">Build experience, seek feedback and check the requirements for each role.</p>
     </div>
     <div class="cp-grid">
       <img class="cp-img" src="images/site/rmp-career-pathway.jpg" alt="RMP Recruitment career pathway: 1 Job seeker, 2 Support Worker, 3 Senior Support Worker, 4 Deputy Manager, 5 Registered Manager" loading="lazy">
       <div class="cp-steps">
-        <div class="cp-head">What to do to move up</div>
-        <div class="cp-step"><div class="cp-num">1</div><div><h3>Job seeker &rarr; Support Worker</h3><p>Apply for a role that suits you. Prepare examples of how you listen, keep commitments and respond when something concerns you. Use examples from work, volunteering or everyday life. Complete the recruitment checks and use induction to learn how the home supports its children.</p></div></div>
-        <div class="cp-step"><div class="cp-num">2</div><div><h3>Support Worker &rarr; Senior Support Worker</h3><p>Build trusting relationships with children, follow their plans, keep clear records and raise concerns promptly. Ask to lead part of a handover or help a new colleague learn a routine, with support from your manager. Show that others can rely on you when a shift gets busy.</p></div></div>
-        <div class="cp-step"><div class="cp-num">3</div><div><h3>Senior Support Worker &rarr; Deputy Manager</h3><p>Lead shifts consistently and follow up what you agree at handover. Ask to take on a defined management task, such as reviewing a set of incident records or helping plan the rota. Show what you noticed, what you changed and how you checked it made a difference.</p></div></div>
-        <div class="cp-step"><div class="cp-num">4</div><div><h3>Deputy Manager &rarr; Registered Manager</h3><p>Build experience supervising staff, reviewing safeguarding practice and leading improvements across the home. Work with your manager or Responsible Individual to review your experience and qualifications against the role requirements and prepare for Ofsted registration. Be ready to explain how your decisions improved children&rsquo;s care.</p></div></div>
+        <p class="cp-intro">It starts in your own bedroom, looking at care vacancies and wondering where you might fit. Over time, the responsibility changes: first you learn to support children well, then you learn to lead a shift, develop a team and oversee the care provided by the whole home.</p>
+        <p class="cp-intro">The flow chart shows one possible route through children&rsquo;s residential care in England. Use each stage to work out <b>what to learn, what responsibility to ask for and what evidence will show you&rsquo;re ready for the next step.</b></p>
+        <details class="cp-step" open><summary><span class="cp-num">1</span><span class="cp-t">Job seeker &rarr; Support Worker: Show what you bring</span></summary><div class="cp-body"><p>Read the job description and find out who the home supports. Think about the everyday work: helping children with routines, building relationships, working shifts and staying calm when plans change. Ask what induction and support you&rsquo;ll receive, especially if this is your first role in care.</p>
+<p>You can draw on experience from work, volunteering, education or everyday life. Prepare examples that show how you listened to someone, kept a commitment, handled a disagreement or asked for help when something was beyond your experience. At interview, explain <b>what you noticed, what you did and what you learned</b>. Complete the application carefully, explain any gaps in your employment history and respond promptly to requests for recruitment checks.</p>
+<p class="cp-ready"><b>What readiness looks like:</b> You can explain why you want to work with children, give examples of how you build trust and show that you&rsquo;re willing to learn. If you don&rsquo;t know how to handle a situation, you can explain how you&rsquo;d get help.</p></div></details>
+        <details class="cp-step"><summary><span class="cp-num">2</span><span class="cp-t">Support Worker &rarr; Senior Support Worker: Become someone others can rely on</span></summary><div class="cp-body"><p>Start with the quality of your own practice. Learn how each child communicates, what helps them feel safe and what their plans ask you to do. Record clearly, raise concerns promptly and follow through on agreed actions. Use supervision to discuss what went well and what you&rsquo;d do differently. If you don&rsquo;t already hold the relevant Level 3 qualification, agree a plan with your employer. For staff in a care role, Regulation 32 normally requires the Level 3 Diploma for Residential Childcare (England), or an equivalent qualification, within two years of starting a care role in a home, subject to the permitted deferrals (<a href="https://www.legislation.gov.uk/uksi/2015/541/regulation/32" target="_blank" rel="noopener">Children&rsquo;s Homes (England) Regulations 2015, reg 32</a>).</p>
+<p><b>What to ask for:</b> Lead part of a handover with an experienced colleague alongside you. Practise explaining the priorities, who will follow up and what the next shift needs to know. Then ask for specific feedback. As you gain confidence, help a new colleague learn an agreed routine and check they understand why it matters.</p>
+<p class="cp-ready"><b>What readiness looks like:</b> You can give an example of keeping care consistent across shifts, helping a colleague improve their practice or spotting a concern and following it through. You can do this on a difficult shift as well as on a straightforward one.</p></div></details>
+        <details class="cp-step"><summary><span class="cp-num">3</span><span class="cp-t">Senior Support Worker &rarr; Deputy Manager: Move from running a shift to improving the home</span></summary><div class="cp-body"><p>As a senior, you coordinate the shift in front of you. As a deputy, you also need to spot patterns across shifts and help the team improve. Build experience in staff supervision, induction, rota planning, incident review and checking the quality of records and care plans. Ask your manager to agree which decisions you can make and which you should escalate.</p>
+<p><b>What to ask for:</b> Take responsibility for one defined improvement. For example, if important actions are repeatedly missed at handover, review a sample of records, speak with the team and agree a simple change. Check a few weeks later whether actions are now being completed and what difference that made for children.</p>
+<p class="cp-ready"><b>What readiness looks like:</b> You can explain a problem you identified, how you involved staff, what you changed and how you checked it worked. You can also give an example of addressing poor practice fairly, setting clear expectations and following up.</p></div></details>
+        <details class="cp-step"><summary><span class="cp-num">4</span><span class="cp-t">Deputy Manager &rarr; Registered Manager: Show you can lead the whole service</span></summary><div class="cp-body"><p>Build experience beyond covering for the manager. Get involved in safer recruitment, placement matching, safeguarding oversight, workforce planning and quality assurance. Work with the manager and Responsible Individual to understand how the home knows children are safe, making progress and being heard. Be ready to discuss what you would do when those checks show something is going wrong.</p>
+<p><b>What to ask for:</b> Lead a review with an agreed scope. Bring together children&rsquo;s feedback, staff observations and records. Identify what needs to change, assign responsibilities and check whether the changes improved children&rsquo;s experience. Use examples like this to prepare for the role and the Ofsted application.</p>
+<p class="cp-ready"><b>Check the requirements early.</b> Under <a href="https://www.legislation.gov.uk/uksi/2015/541/regulation/28" target="_blank" rel="noopener">Regulation 28</a>, you need at least two years&rsquo; experience in a role relevant to the residential care of children within the previous five years, and at least one year in a role requiring you to supervise and manage staff working in care roles. Check your actual duties and dates against those requirements. The Level 5 Diploma in Leadership and Management for Residential Childcare (England), or a qualification the registered provider considers equivalent, must normally be gained within three years of starting to manage a home, subject to permitted deferral. The proposed manager must also apply to Ofsted through the <a href="https://www.gov.uk/government/publications/register-a-childrens-home/apply-to-be-associated-with-a-childrens-home" target="_blank" rel="noopener">SC2 process</a>.</p></div></details>
+        <div class="cp-next">
+          <h3>Make your next step specific</h3>
+          <p>Ask your manager or mentor to agree <b>one responsibility, what good practice looks like and when you&rsquo;ll review it together</b>. For example: <i>&ldquo;Over the next month, I&rsquo;ll lead three handovers with feedback from a senior. At our next supervision, we&rsquo;ll check whether I made the priorities clear and whether agreed actions were followed up.&rdquo;</i></p>
+          <p>Keep a short record of what you did, the feedback you received and what improved. Leave out children&rsquo;s identifying details. Those examples will help you explain at your next interview what you&rsquo;re ready to take on and where you still need support.</p>
+        </div>
       </div>
     </div>
   </div>
