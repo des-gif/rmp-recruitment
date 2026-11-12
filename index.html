@@ -66,6 +66,15 @@
   .pillar p{font-size:15.5px;color:var(--muted)}
 
   section.block{padding:74px 0}
+  .cp-sec{padding:70px 0;background:var(--cream)}
+  .cp-grid{display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:48px;align-items:start;margin-top:36px}
+  .cp-img{width:100%;height:auto;border-radius:18px;box-shadow:0 14px 40px rgba(15,23,42,.16);display:block}
+  .cp-head{font-family:Fraunces,Georgia,serif;font-size:24px;font-weight:600;color:var(--navy);margin-bottom:14px}
+  .cp-step{display:grid;grid-template-columns:44px 1fr;gap:16px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px;margin-bottom:14px}
+  .cp-num{width:44px;height:44px;border-radius:50%;background:var(--amber);color:var(--navy);font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center}
+  .cp-step h3{font-size:19px;color:var(--navy);margin-bottom:6px}
+  .cp-step p{font-size:16px;color:var(--ink);line-height:1.6;margin:0}
+  @media(max-width:900px){.cp-sec{padding:44px 0}.cp-grid{grid-template-columns:1fr;gap:26px}.cp-img{max-width:440px;margin:0 auto}.cp-step{padding:18px 16px;gap:12px;grid-template-columns:38px 1fr}.cp-num{width:38px;height:38px;font-size:16px}}
   .lf-sec{padding:64px 0;background:#fff}
   .lf-grid{display:grid;grid-template-columns:340px 1fr;gap:56px;align-items:center;max-width:1000px}
   .lf-sec .lf-video{width:100%}
@@ -421,6 +430,26 @@
     </div>
   </div>
   <div class="lb-strip"><div class="wrap"><span>Spot your strengths</span><span>Choose a next step</span><span>Build your confidence</span></div></div>
+</section>
+
+<section class="cp-sec" id="career-pathway">
+  <div class="wrap">
+    <div class="center">
+      <div class="kicker">Your career pathway</div>
+      <h2>From job seeker to Registered Manager</h2>
+      <p class="sec-lead">Build experience, seek feedback and check the requirements for each role. Here is what to do to move up at each step.</p>
+    </div>
+    <div class="cp-grid">
+      <img class="cp-img" src="images/site/rmp-career-pathway.jpg" alt="RMP Recruitment career pathway: 1 Job seeker, 2 Support Worker, 3 Senior Support Worker, 4 Deputy Manager, 5 Registered Manager" loading="lazy">
+      <div class="cp-steps">
+        <div class="cp-head">What to do to move up</div>
+        <div class="cp-step"><div class="cp-num">1</div><div><h3>Job seeker &rarr; Support Worker</h3><p>Apply for a role that suits you. Prepare examples of how you listen, keep commitments and respond when something concerns you. Use examples from work, volunteering or everyday life. Complete the recruitment checks and use induction to learn how the home supports its children.</p></div></div>
+        <div class="cp-step"><div class="cp-num">2</div><div><h3>Support Worker &rarr; Senior Support Worker</h3><p>Build trusting relationships with children, follow their plans, keep clear records and raise concerns promptly. Ask to lead part of a handover or help a new colleague learn a routine, with support from your manager. Show that others can rely on you when a shift gets busy.</p></div></div>
+        <div class="cp-step"><div class="cp-num">3</div><div><h3>Senior Support Worker &rarr; Deputy Manager</h3><p>Lead shifts consistently and follow up what you agree at handover. Ask to take on a defined management task, such as reviewing a set of incident records or helping plan the rota. Show what you noticed, what you changed and how you checked it made a difference.</p></div></div>
+        <div class="cp-step"><div class="cp-num">4</div><div><h3>Deputy Manager &rarr; Registered Manager</h3><p>Build experience supervising staff, reviewing safeguarding practice and leading improvements across the home. Work with your manager or Responsible Individual to review your experience and qualifications against the role requirements and prepare for Ofsted registration. Be ready to explain how your decisions improved children&rsquo;s care.</p></div></div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="paths">
