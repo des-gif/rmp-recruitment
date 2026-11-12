@@ -66,6 +66,12 @@
   .pillar p{font-size:15.5px;color:var(--muted)}
 
   section.block{padding:74px 0}
+  .lf-sec{padding:64px 0;background:#fff}
+  .lf-grid{display:grid;grid-template-columns:340px 1fr;gap:56px;align-items:center;max-width:1000px}
+  .lf-sec .lf-video{width:100%}
+  .lf-text h2{font-size:clamp(30px,3.4vw,44px);color:var(--navy);margin:8px 0 16px;line-height:1.1}
+  .lf-text p{font-size:18px;color:var(--muted);margin-bottom:26px;max-width:520px}
+  @media(max-width:820px){.lf-sec{padding:40px 0}.lf-grid{grid-template-columns:1fr;gap:26px;text-align:center}.lf-sec .lf-video{max-width:320px;margin:0 auto}.lf-text p{margin-left:auto;margin-right:auto}.lf-text .btn{width:100%;justify-content:center}}
   .lf{margin:34px auto 6px;max-width:360px}
   .lf-video{display:block;width:100%;aspect-ratio:9/16;border-radius:20px;background:#0e2244;box-shadow:0 14px 40px rgba(15,23,42,.18)}
   .lf figcaption{font-size:15px;color:var(--muted);margin-top:12px;text-align:center}
@@ -386,6 +392,20 @@
   </div>
 </header>
 
+<section class="lf-sec" id="leaders-film">
+  <div class="wrap lf-grid">
+    <video class="lf-video" controls preload="none" playsinline poster="images/site/rmp-leaders-poster.jpg">
+      <source src="media/rmp-leaders-film.mp4" type="video/mp4">
+    </video>
+    <div class="lf-text">
+      <div class="kicker">Watch the film &middot; 5 minutes</div>
+      <h2>How we spot and develop leaders in care</h2>
+      <p>Great Registered Managers rarely start out as managers. They start as support workers who show the right qualities early. Watch how we recognise those qualities and help people grow, from their first support worker role to leading a service.</p>
+      <button type="button" class="btn amber" onclick="var b=document.getElementById('lsa-start');if(b)b.click();">Could it be you? Start my self-assessment &rarr;</button>
+    </div>
+  </div>
+</section>
+
 <section id="spot-a-leader" class="lb-sec">
   <div class="lb" id="leadership-self-assessment">
     <div class="lb-pic"><picture><source media="(max-width:900px)" srcset="images/site/leader-assessment-m.jpg"><img src="images/site/leader-assessment.jpg" alt="Two care workers talking and smiling at a table with a notebook and laptop" loading="lazy"></picture></div>
@@ -439,12 +459,6 @@
     <div class="kicker">Developing leaders</div>
     <h2>Spotting Tomorrow's Care Leaders</h2>
     <p class="sec-lead">Great Registered Managers rarely start out as managers. They start as support workers who show the right qualities early. We look for those qualities, recognise them and help people build on them.</p>
-    <figure class="lf">
-      <video class="lf-video" controls preload="none" playsinline poster="images/site/rmp-leaders-poster.jpg">
-        <source src="media/rmp-leaders-film.mp4" type="video/mp4">
-      </video>
-      <figcaption>How we spot and develop leaders in care (5 minutes)</figcaption>
-    </figure>
     <h3 class="lead-sub">What makes a good leader in care</h3>
     <div class="lead-grid">
       <div class="lead-card"><h3>Puts people first</h3><p>Every decision starts with the person being supported — not the rota, not the paperwork.</p></div>
